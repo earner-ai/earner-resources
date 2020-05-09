@@ -192,18 +192,18 @@ module.exports = {
     // },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sass`,
-    {
-      resolve: "gatsby-plugin-html2amp",
-      options: {
-        files: ["./**/**/index.html"],
-        publicPath: "public",
-        gaConfigPath: "amp-analytics.json",
-        dist: "public/amp",
-        optimize: true,
-        htmlPlugins: [],
-        cssPlugins: []
-      }
-    },
+    // {
+    //   resolve: "gatsby-plugin-html2amp",
+    //   options: {
+    //     files: ["./**/**/index.html"],
+    //     publicPath: "public",
+    //     gaConfigPath: "amp-analytics.json",
+    //     dist: "public/amp",
+    //     optimize: true,
+    //     htmlPlugins: [],
+    //     cssPlugins: []
+    //   }
+    // },
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
