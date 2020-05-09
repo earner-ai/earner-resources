@@ -1,0 +1,67 @@
+{
+  "coaching": {
+    "title": "Sleep Coaching",
+    "description": "Nyxo has read been on the search for how to get the best quality of sleep. To help others, we have shared the knowledge. Having trouble sleeping, but don't know why? Have a look at what we've found to help you sleep better at night. We want to help you sleep better."
+  },
+  "about": {
+    "title": "About",
+    "description": "We´re on a mission to make the world sleep better",
+    "perks": [
+      {
+        "title": "Great Environment",
+        "text": "Pick the tools that work best for you, enjoy the after works activities, and of course some of the best colleagues you can have. Work remotely or in our offices located in Helsinki, the startup capital of Finland."
+      },
+      {
+        "title": "Health and Wellbeing",
+        "text": "We got you covered in our company healthcare plan"
+      },
+      {
+        "title": "Flexible working",
+        "text": "We are very supportive of flexible working hours and asynchronous way of working."
+      },
+      {
+        "title": "Excellent work-life balance",
+        "text": "We believe in treating people right, and having a excellent work-life balance. We don’t want to see you working on weekends or over 8 hours a day, but having time off as well."
+      }
+    ]
+  },
+  "for-you": {
+    "title": "For You",
+    "description": "Nyxo provides personalized sleep coaching, to easily import your existing sleep data from your Apple or Android devices, cloud backups, and much more!"
+  },
+  "for-organizations": {
+    "title": "For Organizations",
+    "description": " Nyxo allows knowledge workers to improve their sleep and day rhythm, allowing them to perform better at work and keep a work-life balance"
+  },
+  "privacy": {
+    "title": "Privacy",
+    "description": "SleepCircle Oy built the Nyxo app as a Freemium app. This SERVICE is provided by SleepCircle Oy at no cost and is intended for use as is. This page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service."
+  },
+  "tags": {
+    "title": "Blog Posts by Tags",
+    "description": "Tagged content in Nyxo Blog. Follow the Nyxo blog to learn about new product features, the latest in sleep health and wellbeing. You can also stay up to date on product announcements and company updates"
+  },
+  "index": {
+    "title": "Learn how to survive in the Finnish job market.",
+    "description": "Earner is the best resource for pointing out how to survivie in the Finnish job market. We highlight government support for the unemployed, startup grants for entrepreneurs, and discuss employment contracts for the employed.",
+    "path": "/"
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Follow the Earner blog to learn about new product features, company news, and employment stories like yours",
+    "path": "/blog"
+  },
+  "terms": {
+    "title": "Terms of Use",
+    "description": "By downloading or using the app, these terms will automatically apply to you – you should make sure therefore that you read them carefully before using the app. You’re not allowed to copy, or modify the app, any part of the app, or our trademarks in any way. You’re not allowed to attempt to extract the source code of the app, and you also shouldn’t try to translate the app into other languages, or make derivative versions. The app itself, and all the trade marks, copyright, database rights and other intellectual property rights related to it, still belong to SleepCircle Oy."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "We take our commitment to our users seriously. If you need our help with your user account, have questions about how to use the Nyxo, any feedback or are experiencing technical difficulties, please do not hesitate to contact us."
+  },
+  "employed": {
+    "title": "For Employees",
+    "description": "Learn your rights as an employee in Finland. Here you will learn about how to collect unpaid salary, employment contracts,labor unions, and more.",
+    "path": "/employed"
+  }
+}
