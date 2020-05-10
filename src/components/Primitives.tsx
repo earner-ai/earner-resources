@@ -269,3 +269,18 @@ export const Resources = styled.div`
     }
   }
 `
+export const SeeMore = styled(Link)`
+  display: block;
+  border-radius: 24.5px;
+  width: max-content;
+  padding: 12px 20px 8px 20px;
+  margin: auto;
+  box-shadow: var(--boxShadow);
+  transition: all 0.25s linear;
+
+  &:hover {
+    border-color: black;
+    box-shadow: var(--boxShadowHover);
+    transform: var(--transform);
+  }
+`

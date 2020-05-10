@@ -4,7 +4,7 @@ import SEO from "../../components/SEO"
 import { graphql, PageProps } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import { TagPill, GreenButton } from "../../components/Primitives"
+import { TagPill, GreenButton, SeeMore } from "../../components/Primitives"
 
 interface Props extends PageProps {
   data: any
@@ -45,6 +45,8 @@ const ResourceView = (props: Props) => {
             return <TagPill key={tag}>#{tag}</TagPill>
           })}
           <Content dangerouslySetInnerHTML={{ __html: html }} />
+          <br />
+          <SeeMore to="/job-seekers">See All Services</SeeMore>
           <SimilarContentWrap>
             <H2>You also might like</H2>
             {data.allMarkdownRemark.edges.map((content: any) => {
@@ -153,7 +155,7 @@ const SimilarContentWrap = styled.div`
 `
 const H2 = styled.h2`
   text-align: center;
-  color: var(--softRed);
+  color: var(--green);
   margin-bottom: 50px;
 `
 const SimilarContent = styled.div`
