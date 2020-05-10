@@ -1,18 +1,18 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/SEO"
-import { Container, Resources } from "../components/Primitives"
-import meta from "../../content/data/meta.json"
-import styled from "styled-components"
-import ResourceCard from "../components/Resources/resourceCard"
-import ResourceHero from "../components/Resources/resourceHero"
-import ResourceLinks from "../components/Resources/resourceLinks"
+import { graphql } from "gatsby"
+import Layout from "../../components/layout"
+import SEO from "../../components/SEO"
+import { Container, Resources } from "../../components/Primitives"
+import meta from "../../../content/data/meta.json"
+import ResourceCard from "../../components/Resources/resourceCard"
+import ResourceHero from "../../components/Resources/resourceHero"
+import ResourceLinks from "../../components/Resources/resourceLinks"
 
 const EmployeedTemplate = ({ data, pageContext }: any) => {
   // const EmployeedTemplate = ({ props }: any) => {
-  const employee = data.allMarkdownRemark.edges
+  const keywords = data.allMarkdownRemark.edges.map((employee: any) => {
+    return employee.node.frontmatter.keywords
+  })
   // const { currentPage } = pageContext
 
   // const pageTitle = {`Employees (${currentPage})`}
@@ -20,7 +20,11 @@ const EmployeedTemplate = ({ data, pageContext }: any) => {
 
   return (
     <Layout>
-      <SEO pathName={meta.employed.path} title={meta.employed.title} />
+      <SEO
+        pathName={meta.employed.path}
+        title={meta.employed.title}
+        keywords={keywords}
+      />
       <ResourceHero
         color="RGBA(141, 211, 217, .8)"
         title={pageTitle}
@@ -91,6 +95,7 @@ export const EmployeedTemplateQuery = graphql`
             tags
             date
             source
+            keywords
           }
           internal {
             content

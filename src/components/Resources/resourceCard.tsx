@@ -16,13 +16,7 @@ interface Props {
 const ResourceCard = (props: Props) => {
   return (
     <Card>
-      {/* <Title>{props.title}</Title> */}
-
-      {/* <Content
-        dangerouslySetInnerHTML={{
-          __html: props.content
-        }}
-      /> */}
+      <h2>{props.title}</h2>
       <Content dangerouslySetInnerHTML={{ __html: props.html }} />
       <Category>
         <b>Category: &nbsp; </b>

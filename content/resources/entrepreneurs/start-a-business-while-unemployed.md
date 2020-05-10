@@ -1,5 +1,5 @@
 ---
-slug: "can-i-start-a-business-while-im-unemployed-and-receiving-kela-benefits"
+slug: "start-a-business-while-unemployed-and-receiving-kela-benefits"
 date: "2020-05-03"
 title: "Can I start a business while I'm unemployed and receiving Kela benefits?"
 author: Kayla Gordon
@@ -15,8 +15,6 @@ keywords:
 tags: ["Entrepreneurship"]
 source: ["Kela"]
 ---
-
-## Can I start a business while I'm unemployed and receiving Kela benefits?
 
 If you decide to start a business while unemployed, you can still continue to receive unemployment benefit payments for another 4 months.
 

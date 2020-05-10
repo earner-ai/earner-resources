@@ -16,8 +16,6 @@ tags: ["Unemployment"]
 source: ["Kela"]
 ---
 
-## Why should I apply for unemployment benefits?
-
 If you become unemployed you can apply for unemployment benefits from Kela after you have registered as an unemployed job seeker at the TE Office (TE Palvelut). The benefits that can be paid to unemployed persons are:
 
 1. Unemployment allowance (earnings-related unemployment allowance or basic unemployment allowance).

@@ -18,8 +18,6 @@ tags: ["Startup Grant"]
 source: ["TE Palvelut"]
 ---
 
-## Tell me more about the Startup Grant (Starttiraha).
-
 The purpose of startup grants is to encourage new businesses and promote employment. The grant provides an entrepreneur with a secure income, however the startup grant doesn't last longer than 12 months.
 
 Startup grant eligibility leans more towards people who will eventually quit their job and focus full time on entrepreneurship. To learn more about the startup grant, eligibility, and necessary steps, click here.

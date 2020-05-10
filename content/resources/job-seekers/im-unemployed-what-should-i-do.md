@@ -15,8 +15,6 @@ tags: ["Unemployment"]
 source: ["Earner"]
 ---
 
-## I'm unemployed. What should I do?
-
 We couldn't find any official list of steps to take once a person becomes unemployed, but here are some suggestions.
 
 1. Register with the TE Office (TE Palvelut) as an unemployed job seeker.

@@ -44,9 +44,14 @@ const FooterContainer = styled(Container)`
 
   svg {
     margin-right: 20px;
+    fill: var(--green);
+    box-shadow: var(--boxShadow);
+    border-radius: 50%;
+    transition: all 0.25s linear;
 
     &:hover {
-      fill: var(--green);
+      box-shadow: var(--boxShadowHover);
+      transform: var(--transform);
     }
   }
 

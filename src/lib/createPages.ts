@@ -5,15 +5,10 @@ import markdownQuery from "./query-blog-posts"
 import markdownEmployee from "./query-employee"
 import markdownJobSeekers from "./query-jobSeeker"
 import markdownEntrepreneurs from "./query-entrepreneurs"
+import markdownResource from "./query-resource"
 const { paginate } = require("gatsby-awesome-pagination") // it works
 // import { paginate } from "gatsby-awesome-pagination"
 
-import {
-  lessonsQuery,
-  habitsQuery,
-  questionnairesQuery,
-  weeksQuery
-} from "./query-contentful"
 interface Post {
   node: {
     fields: {
@@ -25,38 +20,16 @@ interface Post {
   }
 }
 
-interface Week {
+interface Resource {
   node: {
-    id: string
-    slug: string
+    fields: {
+      slug: string
+    }
+    frontmatter: {
+      tags: string
+    }
   }
 }
-
-// interface Lesson {
-//   node: {
-//     id: string
-//     slug: string
-//     author: string
-//     lessonContent: string
-//   }
-// }
-
-// interface Habit {
-//   node: {
-//     id: string
-//     slug: string
-//     title: string
-//     period: string
-//   }
-// }
-
-// interface Questionaire {
-//   node: {
-//     id: string
-//     title: string
-//   }
-// }
-
 export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
@@ -64,6 +37,7 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
   const allMarkdownEmployee = await graphql(markdownEmployee)
   const allMarkdownEntrepreneurs = await graphql(markdownEntrepreneurs)
   const allMarkdownJobSeekers = await graphql(markdownJobSeekers)
+  const allMarkdownResource = await graphql(markdownResource)
 
   if (allMarkdown.errors) {
     throw allMarkdown.errors
@@ -73,13 +47,14 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
   const employee = allMarkdownEmployee.data.allMarkdownRemark
   const entrepreneurs = allMarkdownEntrepreneurs.data.allMarkdownRemark
   const jobSeekers = allMarkdownJobSeekers.data.allMarkdownRemark
+  const resourceView = allMarkdownResource.data.allMarkdownRemark.edges
 
   posts.forEach((post: Post, index: number) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
     createPage({
       path: post.node.fields.slug,
-      component: path.resolve(`./src/templates/blog-post.tsx`),
+      component: path.resolve(`./src/templates/Blog/blog-post.tsx`),
       context: {
         next,
         previous,
@@ -106,7 +81,7 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
   Array.from({ length: employeeNumPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/employee` : `/employee/${i + 1}`,
-      component: path.resolve(`./src/templates/employee.tsx`),
+      component: path.resolve(`./src/templates/ResourcePages/employee.tsx`),
       context: {
         limit: employeePerPage,
         skip: i * employeePerPage,
@@ -122,7 +97,7 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
   Array.from({ length: jobNumPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/job-seekers` : `/job-seekers/${i + 1}`,
-      component: path.resolve(`./src/templates/job-seekers.tsx`),
+      component: path.resolve(`./src/templates/ResourcePages/job-seekers.tsx`),
       context: {
         limit: jobseekersPerPage,
         skip: i * jobseekersPerPage,
@@ -140,12 +115,29 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
   Array.from({ length: entreNumPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/entrepreneurs` : `/entrepreneurs/${i + 1}`,
-      component: path.resolve(`./src/templates/entrepreneurs.tsx`),
+      component: path.resolve(
+        `./src/templates/ResourcePages/entrepreneurs.tsx`
+      ),
       context: {
         limit: entrepreneursPerPage,
         skip: i * entrepreneursPerPage,
         currentPage: i + 1,
         entreNumPages
+      }
+    })
+  })
+
+  resourceView.forEach((resource: Resource, index: number) => {
+    const previous =
+      index === resourceView.length - 1 ? null : resourceView[index + 1].node
+    const next = index === 0 ? null : resourceView[index - 1].node
+    createPage({
+      path: resource.node.fields.slug,
+      component: path.resolve(`./src/templates/ResourcePages/resource.tsx`),
+      context: {
+        next,
+        previous,
+        slug: resource.node.fields.slug
       }
     })
   })

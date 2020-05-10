@@ -1,26 +1,30 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/SEO"
-import { Container, Resources } from "../components/Primitives"
-import meta from "../../content/data/meta.json"
-import styled from "styled-components"
-import ResourceCard from "../components/Resources/resourceCard"
-import ResourceHero from "../components/Resources/resourceHero"
-import ResourceLinks from "../components/Resources/resourceLinks"
+import Layout from "../../components/layout"
+import SEO from "../../components/SEO"
+import { Container, Resources } from "../../components/Primitives"
+import meta from "../../../content/data/meta.json"
+import ResourceCard from "../../components/Resources/resourceCard"
+import ResourceHero from "../../components/Resources/resourceHero"
+import ResourceLinks from "../../components/Resources/resourceLinks"
 
-const Entrepreneur = ({ data }: any) => {
-  const pageTitle = "Job Seekers"
-
+const Entrepreneurs = ({ data }: any) => {
+  const pageTitle = "Entrepreneurs"
+  const keywords = data.allMarkdownRemark.edges.map((entrepreneur: any) => {
+    return entrepreneur.node.frontmatter.keywords
+  })
   return (
     <Layout>
-      <SEO pathName={meta.employed.path} title={meta.employed.title} />
+      <SEO
+        pathName={meta.employed.path}
+        title={meta.employed.title}
+        keywords={keywords}
+      />
       <ResourceHero
-        color="RGBA(255, 204, 204, 0.8)"
+        color="RGBA(2, 38, 64, .8)"
         title={pageTitle}
         subTitle="Read, learn, & stay informed."
-        image='url("images/laptop.png")'
+        image='url("images/books.png")'
       />
 
       <Container>
@@ -43,12 +47,14 @@ const Entrepreneur = ({ data }: any) => {
   )
 }
 
-export default Entrepreneur
+export default Entrepreneurs
 
-export const JobSeekerQuery = graphql`
-  query JobSeekerQuery($skip: Int!, $limit: Int!) {
+export const EntrepreneurQuery = graphql`
+  query EntrepreneurQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/content/resources/job-seekers/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/content/resources/entrepreneurs/" }
+      }
       limit: $limit
       skip: $skip
     ) {
@@ -64,6 +70,7 @@ export const JobSeekerQuery = graphql`
             tags
             date
             source
+            keywords
           }
           internal {
             content

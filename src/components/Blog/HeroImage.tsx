@@ -53,10 +53,10 @@ const BlogHeroImage = () => {
             <BlogDetails>
               <ContentWrap>
                 <Date>{post.node.frontmatter.date}</Date>
-                <h2>{post.node.frontmatter.title}</h2>
+                <h1>{post.node.frontmatter.title}</h1>
                 <br />
                 <br />
-                <BlogButton to={post.node.frontmatter.slug}>READ</BlogButton>
+                <BlogButton to={post.node.frontmatter.slug}>Read</BlogButton>
               </ContentWrap>
             </BlogDetails>
           </SubWrap>

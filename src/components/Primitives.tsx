@@ -196,13 +196,14 @@ export const Button = styled(Link)`
   background: var(--darkBlue);
   border-color: var(--darkBlue);
   color: white;
-  padding: 16px 42px;
-  border-radius: 5px;
-  width: max-content;
+  padding: 12px 24px;
+  border-radius: 24.5px;
   transition: all 0.25s linear;
   text-decoration: none;
+  box-shadow: var(--boxShadow);
+
   &:hover {
-    box-shadow: 0px 5px 15px rgba(2, 38, 64, 0.25) !important;
+    box-shadow: var(--boxShadowHover);
     transform: scale(1.01);
     color: #fff;
   }
@@ -211,17 +212,45 @@ export const SubmitBtn = styled.button`
   background: var(--darkBlue);
   border-color: var(--darkBlue);
   color: white;
-  padding: 16px 42px;
-  border-radius: 5px;
-  width: max-content;
+  padding: 12px 24px;
+  border-radius: 24.5px;
   transition: all 0.25s linear;
   text-decoration: none;
+  box-shadow: var(--boxShadow);
+
   &:hover {
-    box-shadow: 0px 5px 15px rgba(2, 38, 64, 0.25) !important;
+    box-shadow: var(--boxShadowHover);
     transform: scale(1.01);
     color: #fff;
   }
 `
+export const GreenButton = styled(Link)`
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 24.5px;
+  transition: all 0.25s linear;
+  text-decoration: none;
+  box-shadow: var(--boxShadow);
+
+  &:hover {
+    box-shadow: var(--boxShadowHover);
+    transform: scale(1.01);
+    color: #fff;
+  }
+`
+export const TagPill = styled.div`
+  display: block;
+  border-radius: 24.5px;
+  width: max-content;
+  padding: 12px 20px 8px 20px;
+  margin-right: 30px;
+  box-shadow: var(--boxShadow);
+  transition: all 0.25s linear;
+  background-color: var(--grey);
+`
+
 export const Resources = styled.div`
   display: flex;
   flex-direction: row;

@@ -17,8 +17,6 @@ tags: ["Taxes"]
 source: ["Kela"]
 ---
 
-## How will unemployment affect my taxes?
-
 Unemployment benefits are taxable income, and a preliminary tax of 20% is withheld on them.
 
 Even if the unemployment allowance is lower than the wage, the rate of tax may not necessarily be lower. The reason for this is that it is not possible to make the same tax deductions from the allowance as from the salary.

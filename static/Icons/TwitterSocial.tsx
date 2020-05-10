@@ -23,3 +23,7 @@ const TwitterSocial = () => (
 )
 
 export default TwitterSocial
+
+const SVG = styled.svg`
+  fill: var(--green);
+`

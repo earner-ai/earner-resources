@@ -7,7 +7,6 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 // import { Icon } from "./Icons"
 import { SubmitBtn, deviceMin, deviceMax } from "./Primitives"
-import EmailIcon from "../../static/Icons/Email"
 
 const NewsLetterForm = () => {
   const [email, setEmail] = useState(null)

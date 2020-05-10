@@ -20,8 +20,6 @@ tags: ["Entrepreneurship"]
 source: ["Earner"]
 ---
 
-## What financial resources are available to entrepreneurs?
-
 1. The Three Fs (Friends, Family, & Fools)
 
 2. Startup Grant (TE-Palvelut)

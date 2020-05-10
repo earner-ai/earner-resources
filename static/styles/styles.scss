@@ -8,10 +8,10 @@
   // }
 
   // Colors
-  --green: #99dbcf;
+  --green: RGBA(141, 211, 217, 0.8);
   --softRed: #ff585d;
   --darkBlue: #022640;
-  --grey: rgba(0, 43, 56, 0.05);
+  --grey: rgba(228, 233, 237, 1);
   --darkGrey: #555;
   --text: rgb(0, 0, 0);
 
@@ -24,9 +24,13 @@
   --danger: #ffaead;
 
   // Shadows
-  --lightShadow: rgba(255, 255, 255, 0.52);
-  --darkShadow: rgb(163, 177, 198, 0.5);
+  --lightShadow: 0px 5px 15px rgba(2, 38, 64, 0.1);
+  --darkShadow: 0px 5px 15px rgba(2, 38, 64, 0.25);
   --shadowBorder: 0.5px solid var(--lightShadow);
+
+  --boxShadow: var(--lightShadow);
+  --boxShadowHover: var(--darkShadow);
+  --transform: scale(1.01);
 
   --shadow: 9px 9px 22px -2px var(--darkShadow),
     -9px -9px 18px var(--lightShadow);

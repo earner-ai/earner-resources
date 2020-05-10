@@ -17,8 +17,6 @@ tags: ["Networking"]
 source: ["Earner"]
 ---
 
-## Didn't you mention networking?
-
 Yes. Networking, and meeting new people, can make a big difference when unemployed. "You can get a head by who you know". The same is true in Finland.
 
 A few suggestions on getting started is to volunteer at events. A lot of big events will need volunteers. As a volunteer, not only will you get free access to the event, but you will meet new people who could help you get ahead.

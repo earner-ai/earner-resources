@@ -102,6 +102,7 @@ interface HelmetProps {
   twitter?: string
   readingTime?: string
   staticImage?: boolean
+  keywords?: []
 }
 
 const seoURL = (path?: string) => `https://www.earner.ai${path}`
@@ -127,7 +128,8 @@ const getMetaTags = ({
   tags,
   twitter,
   readingTime,
-  staticImage
+  staticImage,
+  keywords
 }: HelmetProps) => {
   const metaTags = [
     { charset: "utf-8" },
@@ -155,11 +157,12 @@ const getMetaTags = ({
     { name: "twitter:title", content: `${title} – Earner` },
     { name: "twitter:description", content: description },
     { name: "twitter:creator", content: twitter || "Earner" },
-
     {
       name: "twitter:image",
       content: staticImage ? seoURL(image) : addHttps(image)
     },
+    { name: `keywords`, content: keywords },
+
     { property: "og:title", content: `${title} – Earner` },
     { property: "og:type", content: contentType },
     { property: "og:url", content: url },
@@ -199,7 +202,8 @@ const SEO = ({
   twitter,
   readingTime,
   author,
-  staticImage
+  staticImage,
+  keywords
 }: HelmetProps) => {
   return (
     <>
@@ -225,7 +229,8 @@ const SEO = ({
           tags,
           twitter,
           readingTime,
-          staticImage
+          staticImage,
+          keywords
         })}
       >
         {children}

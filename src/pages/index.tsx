@@ -111,7 +111,6 @@ const HeroWrap = styled.div`
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-position: center center; */
   background-position: unset;
   min-height: 768px;
 `
@@ -124,7 +123,6 @@ const Overlay = styled.div`
 const HeroContainer = styled(Container)`
   padding: 200px 20px;
   color: white;
-  /* text-align: center; */
 `
 const H1_Attn = styled.h1`
   text-align: center;
@@ -147,14 +145,17 @@ const HeroText = styled.div`
 `
 const SeeMore = styled(Link)`
   display: block;
-  border: 1px solid var(--softRed);
-  border-radius: 5px;
+  border-radius: 24.5px;
   width: max-content;
-  padding: 10px;
+  padding: 12px 20px 8px 20px;
   margin: auto;
+  box-shadow: var(--boxShadow);
+  transition: all 0.25s linear;
 
   &:hover {
     border-color: black;
+    box-shadow: var(--boxShadowHover);
+    transform: var(--transform);
   }
 `
 const GitHubLink = styled.a`

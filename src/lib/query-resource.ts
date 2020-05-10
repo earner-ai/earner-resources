@@ -1,9 +1,7 @@
-const allMarkdownBlog = `
+const markdownResource = `
     {
       allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/blog/" } }
-        sort: { fields: [frontmatter___date], order: DESC }
-        limit: 1000
+        filter: { fileAbsolutePath: { regex: "/content/resources/" } }
       ) {
         edges {
           node {
@@ -17,8 +15,7 @@ const allMarkdownBlog = `
         }
       }
       tagsGroup: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/blog/" } }
-        limit: 2000
+        filter: { fileAbsolutePath: { regex: "/content/resources/" } }
       ) {
         group(field: frontmatter___tags) {
           fieldValue
@@ -27,4 +24,4 @@ const allMarkdownBlog = `
     }
   `
 
-export default allMarkdownBlog
+export default markdownResource
