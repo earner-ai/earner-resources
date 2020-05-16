@@ -3,6 +3,7 @@ slug: "what-financial-resources-are-available-to-entrepreneurs"
 date: "2020-05-03"
 title: "What financial resources are available to entrepreneurs?"
 author: Kayla Gordon
+resourceType: entrepreneur
 keywords:
   [
     "how to get a job in finland",

@@ -3,6 +3,7 @@ slug: "what-are-the-three-fs"
 date: "2020-05-03"
 title: "What are the Three Fs?"
 author: Kayla Gordon
+resourceType: entrepreneur
 keywords:
   [
     "how to get a job in finland",

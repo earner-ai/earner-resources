@@ -102,6 +102,7 @@ interface HelmetProps {
   twitter?: string
   readingTime?: string
   staticImage?: boolean
+  amp?: boolean
   keywords?: []
 }
 
@@ -113,7 +114,7 @@ const addHttps = (path: string | undefined) => {
   return `https:${path}`
 }
 
-const seoDescription = `Earner shows you how to collect unpaid salary, teaches you about employment benefits from Kela, shares knowledge about entrepreneurship in Finland. Earner was created by people who have struggled with the job market and lack of knowledge regarding resources available to them. At Earner, we want to build a bridge between the employment community and services available to them from the Finnish government.`
+const seoDescription = `As a Finnish job-seeker or employee, Earner is here to keep you informed on how to collect any unpaid salary and unemployment benefits from Kela. Additionally, you can learn about entrepreneurship as a Finnish startup. At Earner, we want to help you succeed as a job-seeker, current employee, or entrepreneur.`
 
 const getMetaTags = ({
   title,
@@ -203,7 +204,8 @@ const SEO = ({
   readingTime,
   author,
   staticImage,
-  keywords
+  keywords,
+  amp
 }: HelmetProps) => {
   return (
     <>

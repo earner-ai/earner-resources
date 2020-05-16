@@ -3,6 +3,7 @@ slug: "what-is-the-tempo-grant"
 date: "2020-05-03"
 title: "What is the Tempo Grant?"
 author: Kayla Gordon
+resourceType: entrepreneur
 keywords:
   [
     "start business kela",

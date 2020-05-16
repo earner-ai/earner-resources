@@ -3,6 +3,7 @@ slug: "networking-in-finland"
 date: "2020-05-03"
 title: "Didn't you mention Networking?"
 author: Kayla Gordon
+resourceType: jobSeeker
 keywords:
   [
     "how to get a job in finland",

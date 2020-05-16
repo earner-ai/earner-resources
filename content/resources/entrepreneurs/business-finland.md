@@ -3,6 +3,7 @@ slug: "business-finland"
 date: "2020-05-03"
 title: "Let's talk about Business Finland."
 author: Kayla Gordon
+resourceType: entrepreneur
 keywords:
   [
     "start business kela",

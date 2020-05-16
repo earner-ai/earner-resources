@@ -3,6 +3,7 @@ slug: "should-i-join-an-unemployment-fund"
 date: "2020-05-01"
 title: "Why should I join an unemployment fund?"
 author: Kayla Gordon
+resourceType: employed
 keywords:
   [
     "how to get a job in finland",

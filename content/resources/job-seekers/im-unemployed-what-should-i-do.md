@@ -3,6 +3,7 @@ slug: "im-unemployed-what-should-i-do"
 date: "2020-05-03"
 title: "I'm unemployed. What should I do?"
 author: Kayla Gordon
+resourceType: jobSeeker
 keywords:
   [
     "how to get a job in finland",

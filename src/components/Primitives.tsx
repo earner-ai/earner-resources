@@ -233,6 +233,7 @@ export const GreenButton = styled(Link)`
   transition: all 0.25s linear;
   text-decoration: none;
   box-shadow: var(--boxShadow);
+  font-size: 16px;
 
   &:hover {
     box-shadow: var(--boxShadowHover);
@@ -283,4 +284,7 @@ export const SeeMore = styled(Link)`
     box-shadow: var(--boxShadowHover);
     transform: var(--transform);
   }
+`
+export const DarkButton = styled(Button)`
+  margin: 30px auto;
 `

@@ -3,6 +3,7 @@ slug: "how-long-can-i-receive-kela-unemployment-benefits"
 date: "2020-05-03"
 title: "How long can I receive Kela unemployment benefits?"
 author: Kayla Gordon
+resourceType: jobSeeker
 keywords:
   [
     "how to get a job in finland",

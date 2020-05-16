@@ -3,6 +3,7 @@ slug: "how-can-i-collect-any-unpaid-salary-from-my-employer"
 date: "2020-05-01"
 title: "How can I collect any unpaid salary from my employer?"
 author: Kayla Gordon
+resourceType: employed
 tags: ["Salary"]
 keywords:
   [

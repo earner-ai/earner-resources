@@ -3,6 +3,7 @@ slug: "why-should-i-register-as-an-unemployed-job-seeker"
 date: "2020-05-03"
 title: "Why should I register as an unemployed job seeker?"
 author: Kayla Gordon
+resourceType: jobSeeker
 keywords:
   [
     "how to get a job in finland",

@@ -3,6 +3,7 @@ slug: "tell-me-more-about-employment-contracts"
 date: "2020-05-01"
 title: "Tell me more about Finnish employment contracts."
 author: Kayla Gordon
+resourceType: employed
 keywords:
   [
     "The Employment Contracts Act",

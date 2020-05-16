@@ -1,20 +1,18 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/SEO"
-import { graphql, PageProps, StaticQuery } from "gatsby"
+import { graphql, PageProps } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import { TagPill, GreenButton, SeeMore } from "../../components/Primitives"
 
 interface Props extends PageProps {
   data: any
-  type: string
 }
 
 const ResourceView = (props: Props) => {
   const {
     data,
-    type,
     location: { pathname }
   } = props
   const post = data.markdownRemark
@@ -39,6 +37,7 @@ const ResourceView = (props: Props) => {
           description={frontmatter.description || excerpt}
           staticImage={true}
           keywords={frontmatter.keywords}
+          amp={true}
         />
 
         <Container className="container">
@@ -48,17 +47,7 @@ const ResourceView = (props: Props) => {
           })}
           <Content dangerouslySetInnerHTML={{ __html: html }} />
           <br />
-
-          {post.frontmatter.resourceType == "employed" && (
-            <SeeMore to="/employee">See All Information</SeeMore>
-          )}
-          {post.frontmatter.resourceType == "jobSeeker" && (
-            <SeeMore to="/job-seekers">See All Information</SeeMore>
-          )}
-          {post.frontmatter.resourceType == "entrepreneur" && (
-            <SeeMore to="/entrepreneurs">See All Information</SeeMore>
-          )}
-
+          <SeeMore to="/job-seekers">See All Information</SeeMore>
           <SimilarContentWrap>
             <H2>You also might like</H2>
             {data.allMarkdownRemark.edges.map((content: any) => {
@@ -83,7 +72,7 @@ const ResourceView = (props: Props) => {
 export default ResourceView
 
 export const pageQuery = graphql`
-  query ResourceBySlug($slug: String!) {
+  query ResourceAmpBySlug($slug: String!) {
     site {
       siteMetadata {
         title
@@ -103,7 +92,6 @@ export const pageQuery = graphql`
         slug
         tags
         keywords
-        resourceType
       }
     }
     allMarkdownRemark(

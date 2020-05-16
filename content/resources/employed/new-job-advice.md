@@ -3,6 +3,7 @@ slug: "i-am-about-to-start-a-new-job-any-advice"
 date: "2020-05-01"
 title: "I'm about to start a new job. Any advice?"
 author: Kayla Gordon
+resourceType: employed
 keywords:
   [
     "New Employment",

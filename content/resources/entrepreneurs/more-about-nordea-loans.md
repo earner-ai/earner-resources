@@ -3,6 +3,7 @@ slug: "more-about-bank-loans"
 date: "2020-05-03"
 title: "Anything else about bank loans?"
 author: Kayla Gordon
+resourceType: entrepreneur
 keywords:
   [
     "start business kela",

@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
-import { deviceMax, deviceMin, H2, H3, P } from "../Primitives"
+import { deviceMax, deviceMin, GreenButton } from "../Primitives"
 
 interface Props {
   title: string
@@ -11,6 +11,8 @@ interface Props {
   tags: any
   html: string
   source: string
+  slug: string
+  type: string
 }
 
 const ResourceCard = (props: Props) => {
@@ -18,6 +20,9 @@ const ResourceCard = (props: Props) => {
     <Card>
       <h2>{props.title}</h2>
       <Content dangerouslySetInnerHTML={{ __html: props.html }} />
+      <GreenButton to={props.slug}>Read More</GreenButton>
+      <br />
+      <br />
       <Category>
         <b>Category: &nbsp; </b>
         {props.tags.map((tag: any) => {
@@ -75,4 +80,20 @@ const Category = styled.small`
 
 const Source = styled.small`
   margin-bottom: 15px;
+`
+const SeeMoreResource = styled(Link)`
+  font-size: 16px;
+  border: 1px solid var(--green);
+  padding: 8px 14px;
+  border-radius: 24px;
+  color: white;
+  background-color: var(--green);
+  box-shadow: var(--boxShadow);
+  transition: all 0.25s linear;
+
+  &:hover {
+    color: white;
+    box-shadow: var(--boxShadowHover);
+    transform: var(--transform);
+  }
 `

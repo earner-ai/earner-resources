@@ -3,6 +3,7 @@ slug: "how-will-unemployment-affect-my-taxes"
 date: "2020-05-03"
 title: "How will unemployment affect my taxes?"
 author: Kayla Gordon
+resourceType: jobSeeker
 keywords:
   [
     "how to get a job in finland",

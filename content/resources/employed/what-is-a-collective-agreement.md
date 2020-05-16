@@ -3,6 +3,7 @@ slug: "what-is-a-collective-agreement"
 date: "2020-05-01"
 title: "What is a collective agreement?"
 author: Kayla Gordon
+resourceType: employed
 keywords:
   [
     "how to get a job in finland",

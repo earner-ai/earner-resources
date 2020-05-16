@@ -20,6 +20,7 @@ const Entrepreneur = ({ data }: any) => {
         pathName={meta.employed.path}
         title={meta.employed.title}
         keywords={keywords}
+        amp={true}
       />
       <ResourceHero
         color="RGBA(255, 204, 204, 0.8)"
@@ -38,7 +39,7 @@ const Entrepreneur = ({ data }: any) => {
               title={post.node.frontmatter.title}
               content={post.node.internal.content}
               tags={post.node.frontmatter.tags}
-              html={post.node.excerpt}
+              html={post.node.html}
               source={post.node.frontmatter.source}
               slug={post.node.frontmatter.slug}
             />
@@ -52,7 +53,7 @@ const Entrepreneur = ({ data }: any) => {
 export default Entrepreneur
 
 export const JobSeekerQuery = graphql`
-  query JobSeekerQuery($skip: Int!, $limit: Int!) {
+  query JobSeekerAmpQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/content/resources/job-seekers/" } }
       limit: $limit
@@ -63,7 +64,6 @@ export const JobSeekerQuery = graphql`
           id
           timeToRead
           html
-          excerpt(pruneLength: 400)
           frontmatter {
             author
             slug

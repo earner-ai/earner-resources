@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import styled from "styled-components"
 import * as _ from "lodash"
-import { H1, H2, H3, P, Small, Button, deviceMax } from "../Primitives"
+import { DarkButton } from "../Primitives"
 
 const BlogHeroImage = () => {
   const data = useStaticQuery(graphql`
@@ -56,7 +56,7 @@ const BlogHeroImage = () => {
                 <h1>{post.node.frontmatter.title}</h1>
                 <br />
                 <br />
-                <BlogButton to={post.node.frontmatter.slug}>Read</BlogButton>
+                <DarkButton to={post.node.frontmatter.slug}>Read</DarkButton>
               </ContentWrap>
             </BlogDetails>
           </SubWrap>
@@ -127,9 +127,7 @@ const BlogDetails = styled.div`
     height: 100%;
   }
 `
-const BlogButton = styled(Button)`
-  margin: 30px auto;
-`
+
 const Date = styled.p`
   margin-bottom: 15px;
 

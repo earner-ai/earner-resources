@@ -82,13 +82,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/pages`,
-        name: `pages`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         path: `${__dirname}/content/resources/employed`,
         name: `employeed`
       }
@@ -173,14 +166,8 @@ module.exports = {
         background_color: `#F4F5F9`,
         theme_color: `#4a5aef`,
         display: `minimal-ui`,
-        // icon: `${__dirname}/static/images/icon.jpg`,
+        icon: `${__dirname}/static/images/logo.png`,
         prefer_related_applications: true
-        // related_applications: [
-        //   {
-        //     platform: "play",
-        //     id: "fi.nyxo.app"
-        //   }
-        // ]
       }
     },
     // {
@@ -192,18 +179,6 @@ module.exports = {
     // },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sass`,
-    // {
-    //   resolve: "gatsby-plugin-html2amp",
-    //   options: {
-    //     files: ["./**/**/index.html"],
-    //     publicPath: "public",
-    //     gaConfigPath: "amp-analytics.json",
-    //     dist: "public/amp",
-    //     optimize: true,
-    //     htmlPlugins: [],
-    //     cssPlugins: []
-    //   }
-    // },
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
@@ -233,6 +208,31 @@ module.exports = {
         langKeyDefault: "en",
         useLangKeyLayout: false,
         prefixDefault: false
+      }
+    },
+    {
+      resolve: `gatsby-plugin-amp`,
+      options: {
+        analytics: {
+          type: "gtag",
+          dataCredentials: "include",
+          config: {
+            vars: {
+              gtag_id: "UA-111729679-1",
+              config: {
+                "UA-111729679-1": {
+                  page_location: "{{pathname}}"
+                }
+              }
+            }
+          }
+        },
+        canonicalBaseUrl: "https://www.earner.ai/",
+        components: ["amp-form"],
+        excludedPaths: ["/404*", "/"],
+        pathIdentifier: "/amp/",
+        relAmpHtmlPattern: "{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}",
+        useAmpClientIdApi: true
       }
     }
   ]

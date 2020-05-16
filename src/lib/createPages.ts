@@ -56,9 +56,19 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
       path: post.node.fields.slug,
       component: path.resolve(`./src/templates/Blog/blog-post.tsx`),
       context: {
-        next,
+        slug: post.node.fields.slug,
         previous,
-        slug: post.node.fields.slug
+        next
+      }
+    })
+
+    createPage({
+      path: `${post.node.fields.slug}/amp`,
+      component: path.resolve(`./src/templates/Blog/blog-post.amp.tsx`),
+      context: {
+        slug: post.node.fields.slug,
+        previous,
+        next
       }
     })
   })
@@ -89,6 +99,17 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
         employeeNumPages
       }
     })
+
+    createPage({
+      path: i === 0 ? `/employee/amp` : `/employee/${i + 1}/amp`,
+      component: path.resolve(`./src/templates/ResourcePages/employee.amp.tsx`),
+      context: {
+        limit: employeePerPage,
+        skip: i * employeePerPage,
+        currentPage: i + 1,
+        employeeNumPages
+      }
+    })
   })
 
   const jobseekersPerPage = 20
@@ -98,6 +119,19 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
     createPage({
       path: i === 0 ? `/job-seekers` : `/job-seekers/${i + 1}`,
       component: path.resolve(`./src/templates/ResourcePages/job-seekers.tsx`),
+      context: {
+        limit: jobseekersPerPage,
+        skip: i * jobseekersPerPage,
+        currentPage: i + 1,
+        jobNumPages
+      }
+    })
+
+    createPage({
+      path: i === 0 ? `/job-seekers/amp` : `/job-seekers/${i + 1}/amp`,
+      component: path.resolve(
+        `./src/templates/ResourcePages/job-seekers.amp.tsx`
+      ),
       context: {
         limit: jobseekersPerPage,
         skip: i * jobseekersPerPage,
@@ -125,6 +159,19 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
         entreNumPages
       }
     })
+
+    createPage({
+      path: i === 0 ? `/entrepreneurs/amp` : `/entrepreneurs/${i + 1}/amp`,
+      component: path.resolve(
+        `./src/templates/ResourcePages/entrepreneurs.amp.tsx`
+      ),
+      context: {
+        limit: entrepreneursPerPage,
+        skip: i * entrepreneursPerPage,
+        currentPage: i + 1,
+        entreNumPages
+      }
+    })
   })
 
   resourceView.forEach((resource: Resource, index: number) => {
@@ -134,6 +181,16 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
     createPage({
       path: resource.node.fields.slug,
       component: path.resolve(`./src/templates/ResourcePages/resource.tsx`),
+      context: {
+        next,
+        previous,
+        slug: resource.node.fields.slug
+      }
+    })
+
+    createPage({
+      path: `${resource.node.fields.slug}/amp`,
+      component: path.resolve(`./src/templates/ResourcePages/resource.amp.tsx`),
       context: {
         next,
         previous,

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/SEO"
 import { Container, Resources } from "../../components/Primitives"
@@ -8,11 +8,15 @@ import ResourceCard from "../../components/Resources/resourceCard"
 import ResourceHero from "../../components/Resources/resourceHero"
 import ResourceLinks from "../../components/Resources/resourceLinks"
 
-const Entrepreneur = ({ data }: any) => {
-  const pageTitle = "Job Seekers"
-  const keywords = data.allMarkdownRemark.edges.map((jobSeeker: any) => {
-    return jobSeeker.node.frontmatter.keywords
+const EmployeedTemplate = ({ data, pageContext }: any) => {
+  // const EmployeedTemplate = ({ props }: any) => {
+  const keywords = data.allMarkdownRemark.edges.map((employee: any) => {
+    return employee.node.frontmatter.keywords
   })
+  // const { currentPage } = pageContext
+
+  // const pageTitle = {`Employees (${currentPage})`}
+  const pageTitle = "Employees"
 
   return (
     <Layout>
@@ -20,12 +24,13 @@ const Entrepreneur = ({ data }: any) => {
         pathName={meta.employed.path}
         title={meta.employed.title}
         keywords={keywords}
+        amp={true}
       />
       <ResourceHero
-        color="RGBA(255, 204, 204, 0.8)"
+        color="RGBA(141, 211, 217, .8)"
         title={pageTitle}
         subTitle="Read, learn, & stay informed."
-        image='url("images/laptop.png")'
+        image='url("images/waiter.png")'
       />
 
       <Container>
@@ -38,23 +43,45 @@ const Entrepreneur = ({ data }: any) => {
               title={post.node.frontmatter.title}
               content={post.node.internal.content}
               tags={post.node.frontmatter.tags}
-              html={post.node.excerpt}
+              html={post.node.html}
               source={post.node.frontmatter.source}
               slug={post.node.frontmatter.slug}
             />
           ))}
         </Resources>
+
+        <ul>
+          {Array.from({ length: pageContext.employeeNumPages }).map(
+            (item, i) => {
+              const index = i + 1
+              const link = index === 1 ? "/employee" : `/employee/${index}`
+
+              // if there isn't more than one page, hide the pagination
+              if (index > 1) {
+                return (
+                  <li key={index}>
+                    {pageContext.currentPage === index ? (
+                      <span>{index}</span>
+                    ) : (
+                      <a href={link}>{index}</a>
+                    )}
+                  </li>
+                )
+              }
+            }
+          )}
+        </ul>
       </Container>
     </Layout>
   )
 }
 
-export default Entrepreneur
+export default EmployeedTemplate
 
-export const JobSeekerQuery = graphql`
-  query JobSeekerQuery($skip: Int!, $limit: Int!) {
+export const EmployeedTemplateQuery = graphql`
+  query EmployeedAmpQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/content/resources/job-seekers/" } }
+      filter: { fileAbsolutePath: { regex: "/content/resources/employed/" } }
       limit: $limit
       skip: $skip
     ) {
@@ -63,7 +90,6 @@ export const JobSeekerQuery = graphql`
           id
           timeToRead
           html
-          excerpt(pruneLength: 400)
           frontmatter {
             author
             slug

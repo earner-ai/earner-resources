@@ -3,6 +3,7 @@ slug: "start-a-business-while-unemployed-and-receiving-kela-benefits"
 date: "2020-05-03"
 title: "Can I start a business while I'm unemployed and receiving Kela benefits?"
 author: Kayla Gordon
+resourceType: jobSeeker
 keywords:
   [
     "how to get a job in finland",

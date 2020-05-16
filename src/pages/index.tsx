@@ -47,12 +47,14 @@ const IndexPage = ({ data }: any) => (
             title={post.node.frontmatter.title}
             content={post.node.internal.content}
             tags={post.node.frontmatter.tags}
-            html={post.node.html}
+            html={post.node.excerpt}
             source={post.node.frontmatter.source}
+            slug={post.node.frontmatter.slug}
+            type={post.node.frontmatter.resourceType}
           />
         ))}
       </Resources>
-      <SeeMore to="/job-seekers">See All Services</SeeMore>
+      <SeeMore to="/job-seekers">See All Information</SeeMore>
 
       <H1>For the people, by the people</H1>
       <ContentContainer style={{ margin: "auto" }}>
@@ -89,6 +91,7 @@ export const IndexQuery = graphql`
           id
           timeToRead
           html
+          excerpt(pruneLength: 400)
           frontmatter {
             author
             slug
@@ -96,6 +99,7 @@ export const IndexQuery = graphql`
             tags
             date
             source
+            resourceType
           }
           internal {
             content

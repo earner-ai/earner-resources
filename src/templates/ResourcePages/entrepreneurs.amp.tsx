@@ -8,24 +8,24 @@ import ResourceCard from "../../components/Resources/resourceCard"
 import ResourceHero from "../../components/Resources/resourceHero"
 import ResourceLinks from "../../components/Resources/resourceLinks"
 
-const Entrepreneur = ({ data }: any) => {
-  const pageTitle = "Job Seekers"
-  const keywords = data.allMarkdownRemark.edges.map((jobSeeker: any) => {
-    return jobSeeker.node.frontmatter.keywords
+const Entrepreneurs = ({ data }: any) => {
+  const pageTitle = "Entrepreneurs"
+  const keywords = data.allMarkdownRemark.edges.map((entrepreneur: any) => {
+    return entrepreneur.node.frontmatter.keywords
   })
-
   return (
     <Layout>
       <SEO
         pathName={meta.employed.path}
         title={meta.employed.title}
         keywords={keywords}
+        amp={true}
       />
       <ResourceHero
-        color="RGBA(255, 204, 204, 0.8)"
+        color="RGBA(2, 38, 64, .8)"
         title={pageTitle}
         subTitle="Read, learn, & stay informed."
-        image='url("images/laptop.png")'
+        image='url("images/books.png")'
       />
 
       <Container>
@@ -38,7 +38,7 @@ const Entrepreneur = ({ data }: any) => {
               title={post.node.frontmatter.title}
               content={post.node.internal.content}
               tags={post.node.frontmatter.tags}
-              html={post.node.excerpt}
+              html={post.node.html}
               source={post.node.frontmatter.source}
               slug={post.node.frontmatter.slug}
             />
@@ -49,12 +49,14 @@ const Entrepreneur = ({ data }: any) => {
   )
 }
 
-export default Entrepreneur
+export default Entrepreneurs
 
-export const JobSeekerQuery = graphql`
-  query JobSeekerQuery($skip: Int!, $limit: Int!) {
+export const EntrepreneurQuery = graphql`
+  query EntrepreneurAmpQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/content/resources/job-seekers/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/content/resources/entrepreneurs/" }
+      }
       limit: $limit
       skip: $skip
     ) {
@@ -63,7 +65,6 @@ export const JobSeekerQuery = graphql`
           id
           timeToRead
           html
-          excerpt(pruneLength: 400)
           frontmatter {
             author
             slug

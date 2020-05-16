@@ -3,6 +3,7 @@ slug: "cant-i-just-quit-my-job"
 date: "2020-05-01"
 title: "Can't I just quit my job?"
 author: Kayla Gordon
+resourceType: employed
 keywords:
   [
     "how to get a job in finland",

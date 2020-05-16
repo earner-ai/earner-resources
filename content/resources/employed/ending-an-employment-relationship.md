@@ -3,6 +3,7 @@ slug: "ending-an-employment-relationship"
 date: "2020-05-01"
 title: "Ending an employment relationship"
 author: Kayla Gordon
+resourceType: employed
 keywords:
   [
     "how to get a job in finland",

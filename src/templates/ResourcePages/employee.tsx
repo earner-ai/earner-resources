@@ -40,10 +40,12 @@ const EmployeedTemplate = ({ data, pageContext }: any) => {
             <ResourceCard
               key={post.node.id}
               title={post.node.frontmatter.title}
-              content={post.node.internal.content}
+              content={post.node.excerpt}
               tags={post.node.frontmatter.tags}
-              html={post.node.html}
+              html={post.node.excerpt}
               source={post.node.frontmatter.source}
+              slug={post.node.frontmatter.slug}
+              type={post.node.frontmatter.resourceType}
             />
           ))}
         </Resources>
@@ -88,6 +90,7 @@ export const EmployeedTemplateQuery = graphql`
           id
           timeToRead
           html
+          excerpt(pruneLength: 400)
           frontmatter {
             author
             slug
@@ -96,6 +99,7 @@ export const EmployeedTemplateQuery = graphql`
             date
             source
             keywords
+            resourceType
           }
           internal {
             content

@@ -3,6 +3,7 @@ slug: "should-i-update-my-tax-information"
 date: "2020-05-01"
 title: "Why should I update my tax information?"
 author: Kayla Gordon
+resourceType: employed
 keywords:
   [
     "how to get a job in finland",

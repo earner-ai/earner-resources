@@ -3,6 +3,7 @@ slug: "tell-me-more-about-the-startup-grant-starttiraha"
 date: "2020-05-03"
 title: "Tell me more about the Startup Grant (Starttiraha)."
 author: Kayla Gordon
+resourceType: entrepreneur
 keywords:
   [
     "start business kela",

@@ -3,6 +3,7 @@ slug: "why-should-i-apply-for-unemployment-benefits"
 date: "2020-05-03"
 title: "Why should I apply for unemployment benefits?"
 author: Kayla Gordon
+resourceType: jobSeeker
 keywords:
   [
     "how to get a job in finland",

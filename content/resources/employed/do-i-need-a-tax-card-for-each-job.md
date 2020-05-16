@@ -3,6 +3,7 @@ slug: "do-i-need-a-tax-card-for-each-job"
 date: "2020-05-01"
 title: "I have more than one job. Do I need a tax card for each job?"
 author: Kayla Gordon
+resourceType: employed
 keywords:
   [
     "how to get a job in finland",

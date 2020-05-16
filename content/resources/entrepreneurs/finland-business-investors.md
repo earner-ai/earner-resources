@@ -3,6 +3,7 @@ slug: "finland-business-investors"
 date: "2020-05-03"
 title: "What can you tell me about investors?"
 author: Kayla Gordon
+resourceType: entrepreneur
 keywords:
   [
     "start business kela",
