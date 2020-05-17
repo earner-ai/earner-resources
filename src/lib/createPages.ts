@@ -64,7 +64,7 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
 
     createPage({
       path: `${post.node.fields.slug}/amp`,
-      component: path.resolve(`./src/templates/Blog/blog-post.amp.tsx`),
+      component: path.resolve(`./src/templates/Blog/amp/blog-post.amp.tsx`),
       context: {
         slug: post.node.fields.slug,
         previous,
@@ -197,6 +197,16 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
         slug: resource.node.fields.slug
       }
     })
+  })
+
+  createPage({
+    path: `blog/amp`,
+    component: path.resolve(`./src/templates/Blog/amp/blog.amp.tsx`)
+  })
+
+  createPage({
+    path: `/amp`,
+    component: path.resolve(`./src/templates/index.amp.tsx`)
   })
 
   return null

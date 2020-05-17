@@ -16,9 +16,9 @@ import NewsLetter from "../components/newsletter"
 import ResourceCard from "../components/Resources/resourceCard"
 import GitHub from "../../static/Icons/GitHub"
 
-const IndexPage = ({ data }: any) => (
+const IndexAmp = ({ data }: any) => (
   <Layout>
-    <SEO pathName={meta.index.path} title={meta.index.title} />
+    <SEO pathName={meta.index.path} title={meta.index.title} amp={true} />
     <HeroWrap>
       <Overlay>
         <HeroContainer>
@@ -73,15 +73,15 @@ const IndexPage = ({ data }: any) => (
           <GitHub />
         </GitHubLink>
       </ContentContainer>
-      <NewsLetter image={data.newsImage.childImageSharp.fluid} />
+      <NewsLetter />
     </Container>
   </Layout>
 )
 
-export default IndexPage
+export default IndexAmp
 
 export const IndexQuery = graphql`
-  query IndexQuery {
+  query IndexAmpQuery {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/content/resources/job-seekers/" } }
       limit: 3
@@ -104,25 +104,6 @@ export const IndexQuery = graphql`
           internal {
             content
           }
-        }
-      }
-    }
-    newsImage: file(relativePath: { eq: "newsletter.png" }) {
-      childImageSharp {
-        sizes(quality: 100, sizes: "600") {
-          base64
-          tracedSVG
-          srcWebp
-          srcSetWebp
-          originalImg
-          originalName
-          presentationWidth
-          presentationHeight
-          sizes
-          aspectRatio
-        }
-        fluid(quality: 100) {
-          srcSetWebp
         }
       }
     }

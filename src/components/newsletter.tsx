@@ -3,12 +3,16 @@ import React, { useState } from "react"
 //@ts-ignore
 import addToMailchimp from "gatsby-plugin-mailchimp"
 import styled from "styled-components"
-import { Link, useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import { graphql } from "gatsby"
+import Image from "./image"
 // import { Icon } from "./Icons"
 import { SubmitBtn, deviceMin, deviceMax } from "./Primitives"
 
-const NewsLetterForm = () => {
+interface Props {
+  image: any
+}
+
+const NewsLetterForm = (props: Props) => {
   const [email, setEmail] = useState(null)
   const [allow, setAllow] = useState(true)
 
@@ -39,7 +43,6 @@ const NewsLetterForm = () => {
       <LeftNews>
         <H1>Let&apos;s keep in touch!</H1>
         <P>Subscribe to our newsletter & stay up to date with our services.</P>
-
         {allow ? (
           <EmailForm method="POST" onSubmit={handleSubmit}>
             <EmailField
@@ -62,7 +65,9 @@ const NewsLetterForm = () => {
           <ThanksForSubscribing>Thanks for subscribing!</ThanksForSubscribing>
         )}
       </LeftNews>
-      <RightNews />
+      <RightNews>
+        <NewsLetterImage alt="Newsletter Image" path={props.image} />
+      </RightNews>
     </NewsWrap>
   )
 }
@@ -86,14 +91,16 @@ const LeftNews = styled.div`
 const RightNews = styled.div`
   width: 35%;
   height: 600px;
-  background-image: url("images/newsletter.png");
+  /* background-image: url("images/newsletter.png"); */
   position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+
   border: 20px solid var(--grey);
   border-radius: 0px 100px 0px;
   margin: 0 auto;
+
+  img {
+    border-radius: 0px 80px 0px;
+  }
 
   @media ${deviceMax.mobileL} {
     display: none;
@@ -127,4 +134,9 @@ const ThanksForSubscribing = styled.div`
   margin-top: 1rem;
   text-align: center;
   font-weight: 700;
+`
+const NewsLetterImage = styled(Image)`
+  img {
+    position: initial !important;
+  }
 `

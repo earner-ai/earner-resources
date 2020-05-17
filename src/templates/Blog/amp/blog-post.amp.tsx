@@ -1,6 +1,6 @@
 import React from "react"
-import Layout from "../../components/layout"
-import SEO from "../../components/SEO"
+import Layout from "../../../components/layout"
+import SEO from "../../../components/SEO"
 import { graphql, PageProps } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
@@ -9,7 +9,7 @@ interface Props extends PageProps {
   data: any
 }
 
-const BlogPost = (props: Props) => {
+const BlogPostAmp = (props: Props) => {
   const {
     data,
     location: { pathname }
@@ -53,7 +53,7 @@ const BlogPost = (props: Props) => {
   )
 }
 
-export default BlogPost
+export default BlogPostAmp
 
 export const pageQuery = graphql`
   query AmpPostBySlug($slug: String!) {
