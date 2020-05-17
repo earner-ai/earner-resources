@@ -16,9 +16,9 @@ import NewsLetter from "../components/newsletter"
 import ResourceCard from "../components/Resources/resourceCard"
 import GitHub from "../../static/Icons/GitHub"
 
-const IndexAmp = ({ data }: any) => (
+const IndexPage = ({ data }: any) => (
   <Layout>
-    <SEO pathName={meta.index.path} title={meta.index.title} amp={true} />
+    <SEO pathName={meta.index.path} title={meta.index.title} />
     <HeroWrap>
       <Overlay>
         <HeroContainer>
@@ -73,12 +73,12 @@ const IndexAmp = ({ data }: any) => (
           <GitHub />
         </GitHubLink>
       </ContentContainer>
-      <NewsLetter />
+      <NewsLetter image={data.newsImage.childImageSharp.fluid} />
     </Container>
   </Layout>
 )
 
-export default IndexAmp
+export default IndexPage
 
 export const IndexQuery = graphql`
   query IndexAmpQuery {
@@ -104,6 +104,13 @@ export const IndexQuery = graphql`
           internal {
             content
           }
+        }
+      }
+    }
+    newsImage: file(relativePath: { eq: "newsletter.png" }) {
+      childImageSharp {
+        fluid(quality: 100) {
+          srcSetWebp
         }
       }
     }
