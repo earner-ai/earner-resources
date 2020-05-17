@@ -8,6 +8,7 @@ import "../../static/styles/styles.scss"
 import GitHubSocial from "../../static/Icons/GitHubSocial"
 import TwitterSocial from "../../static/Icons/TwitterSocial"
 import styled from "styled-components"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const Footer = () => {
   return (
@@ -22,13 +23,13 @@ const Footer = () => {
         <Card></Card>
         <Card>
           <h4>Follow Us</h4>
-          <a href="https://github.com/Earner-ai/">
+          <OutboundLink href="https://github.com/Earner-ai/" target="_new">
             <GitHubSocial />
-          </a>
+          </OutboundLink>
 
-          <a href="https://twitter.com/earner_ai">
+          <OutboundLink href="https://twitter.com/earner_ai" target="_new">
             <TwitterSocial />
-          </a>
+          </OutboundLink>
         </Card>
       </Column>
     </FooterContainer>

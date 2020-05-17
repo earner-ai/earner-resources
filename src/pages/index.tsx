@@ -15,6 +15,7 @@ import styled from "styled-components"
 import NewsLetter from "../components/newsletter"
 import ResourceCard from "../components/Resources/resourceCard"
 import GitHub from "../../static/Icons/GitHub"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const IndexPage = ({ data }: any) => (
   <Layout>
@@ -69,7 +70,7 @@ const IndexPage = ({ data }: any) => (
           Want to help others learn about Finnish services? You can help Earner
           grow. Find us on GitHub.
         </P>
-        <GitHubLink href="https://github.com/Earner-ai/">
+        <GitHubLink href="https://github.com/Earner-ai/" target="_new">
           <GitHub />
         </GitHubLink>
       </ContentContainer>
@@ -156,7 +157,7 @@ const HeroText = styled.div`
   }
 `
 
-const GitHubLink = styled.a`
+const GitHubLink = styled(OutboundLink)`
   margin: auto;
   display: block;
   text-align: center;
