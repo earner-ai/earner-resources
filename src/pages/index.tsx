@@ -109,18 +109,6 @@ export const IndexQuery = graphql`
     }
     newsImage: file(relativePath: { eq: "newsletter.png" }) {
       childImageSharp {
-        sizes(quality: 100, sizes: "600") {
-          base64
-          tracedSVG
-          srcWebp
-          srcSetWebp
-          originalImg
-          originalName
-          presentationWidth
-          presentationHeight
-          sizes
-          aspectRatio
-        }
         fluid(quality: 100) {
           srcSetWebp
         }
