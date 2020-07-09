@@ -7,6 +7,7 @@ import meta from "../../../content/data/meta.json"
 import ResourceCard from "../../components/Resources/resourceCard"
 import ResourceHero from "../../components/Resources/resourceHero"
 import ResourceLinks from "../../components/Resources/resourceLinks"
+import Img from "gatsby-image"
 
 const EmployeedTemplate = ({ data, pageContext }: any) => {
   // const EmployeedTemplate = ({ props }: any) => {
@@ -29,12 +30,11 @@ const EmployeedTemplate = ({ data, pageContext }: any) => {
         color="RGBA(141, 211, 217, .8)"
         title={pageTitle}
         subTitle="Read, learn, & stay informed."
-        image='url("images/waiter.png")'
+        image={data?.file.childImageSharp.fluid}
       />
 
       <Container>
         <ResourceLinks title={pageTitle} />
-
         <Resources>
           {data.allMarkdownRemark.edges.map((post: any) => (
             <ResourceCard
@@ -49,7 +49,6 @@ const EmployeedTemplate = ({ data, pageContext }: any) => {
             />
           ))}
         </Resources>
-
         <ul>
           {Array.from({ length: pageContext.employeeNumPages }).map(
             (item, i) => {
@@ -104,6 +103,13 @@ export const EmployeedTemplateQuery = graphql`
           internal {
             content
           }
+        }
+      }
+    }
+    file(relativePath: { eq: "waiter.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

@@ -30,7 +30,7 @@ const addHttps = (path: string | undefined) => {
   return `https:${path}`
 }
 
-const seoDescription = `As a Finnish job-seeker or employee, Earner is here to keep you informed on how to collect any unpaid salary and unemployment benefits from Kela. Additionally, you can learn about entrepreneurship as a Finnish startup. At Earner, we want to help you succeed as a job-seeker, current employee, or entrepreneur.`
+const seoDescription = `Your number one resource to the Finnish employment community.`
 
 const getMetaTags = ({
   title,
@@ -152,7 +152,10 @@ const SEO = ({
         })}
       >
         {children}
-        <link rel="amphtml" href={`https://earner.ai/amp/}`} />
+        <link
+          rel="amphtml"
+          href={`https://www.earner.ai/amp/${pathName.replace(/^\/+/g, "")}`}
+        />
         <script type="application/ld+json">
           {`
 {

@@ -14,7 +14,7 @@ interface Props {
 const ResourceHero = (props: Props) => {
   return (
     <HeroWrap>
-      <Image style={{ backgroundImage: props.image }} />
+      <Image alt={"Waiter"} fluid={props.image} />
       <Overlay
         style={{
           backgroundColor: props.color
@@ -46,7 +46,7 @@ const HeroWrap = styled.div`
   object-fit: cover;
   background-position: center center;
 `
-const Image = styled.img`
+const Image = styled(Img)`
   width: 100%;
   height: 100%;
   display: block;

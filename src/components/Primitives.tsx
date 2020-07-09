@@ -240,6 +240,9 @@ export const GreenButton = styled(Link)`
     transform: scale(1.01);
     color: #fff;
   }
+  @media ${deviceMax.mobileL} {
+    margin-left: 27%;
+  }
 `
 export const TagPill = styled.div`
   display: block;

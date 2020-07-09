@@ -5,9 +5,8 @@ require("ts-node").register()
 
 exports.onCreateNode = async options => {
   return Promise.all([
-    require("./src/lib/gatsby-onCreateNode-readingTime").onCreateNode(options),
-    require("./src/lib/gatsby-onCreateNode-excerpt").onCreateNode(options)
-
+    // require("./src/lib/gatsby-onCreateNode-readingTime").onCreateNode(options),
+    // require("./src/lib/gatsby-onCreateNode-excerpt").onCreateNode(options)
     // add your other onCreateNode functions here
   ])
 }

@@ -12,7 +12,7 @@ interface Props {
   html: string
   source: string
   slug: string
-  type: string
+  type?: string
 }
 
 const ResourceCard = (props: Props) => {

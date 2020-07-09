@@ -23,6 +23,11 @@
   --warning: #ffe890;
   --danger: #ffaead;
 
+  // Text shadows (neumorphic)
+  --shadowColor: #c0c0c0;
+  --brShadow: -6px 6px 15px rgba(0, 0, 0, 0.5);
+  --tlShadow: 6px -6px 15px rgba(255, 255, 255, 0.8);
+
   // Shadows
   --lightShadow: 0px 5px 15px rgba(2, 38, 64, 0.1);
   --darkShadow: 0px 5px 15px rgba(2, 38, 64, 0.25);

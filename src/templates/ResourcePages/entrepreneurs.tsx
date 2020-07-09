@@ -24,7 +24,7 @@ const Entrepreneurs = ({ data }: any) => {
         color="RGBA(2, 38, 64, .8)"
         title={pageTitle}
         subTitle="Read, learn, & stay informed."
-        image='url("images/books.png")'
+        image={data?.file.childImageSharp.fluid}
       />
 
       <Container>
@@ -50,8 +50,8 @@ const Entrepreneurs = ({ data }: any) => {
 
 export default Entrepreneurs
 
-export const EntrepreneurQuery = graphql`
-  query EntrepreneurQuery($skip: Int!, $limit: Int!) {
+export const EntrepreneurTemplateQuery = graphql`
+  query EntrepreneurTemplateQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/content/resources/entrepreneurs/" }
@@ -77,6 +77,13 @@ export const EntrepreneurQuery = graphql`
           internal {
             content
           }
+        }
+      }
+    }
+    file(relativePath: { eq: "books.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

@@ -8,7 +8,7 @@ import ResourceCard from "../../components/Resources/resourceCard"
 import ResourceHero from "../../components/Resources/resourceHero"
 import ResourceLinks from "../../components/Resources/resourceLinks"
 
-const Entrepreneur = ({ data }: any) => {
+const JobSeekerTemplate = ({ data }: any) => {
   const pageTitle = "Job Seekers"
   const keywords = data.allMarkdownRemark.edges.map((jobSeeker: any) => {
     return jobSeeker.node.frontmatter.keywords
@@ -25,7 +25,7 @@ const Entrepreneur = ({ data }: any) => {
         color="RGBA(255, 204, 204, 0.8)"
         title={pageTitle}
         subTitle="Read, learn, & stay informed."
-        image='url("images/laptop.png")'
+        image={data?.file.childImageSharp.fluid}
       />
 
       <Container>
@@ -49,10 +49,10 @@ const Entrepreneur = ({ data }: any) => {
   )
 }
 
-export default Entrepreneur
+export default JobSeekerTemplate
 
-export const JobSeekerQuery = graphql`
-  query JobSeekerQuery($skip: Int!, $limit: Int!) {
+export const JobSeekerTemplateQuery = graphql`
+  query JobSeekerTemplateQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/content/resources/job-seekers/" } }
       limit: $limit
@@ -76,6 +76,13 @@ export const JobSeekerQuery = graphql`
           internal {
             content
           }
+        }
+      }
+    }
+    file(relativePath: { eq: "laptop.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
