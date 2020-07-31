@@ -1,7 +1,7 @@
 ---
-slug: "more-about-bank-loans"
+slug: "finnvera-start-guarantee"
 date: "2020-05-03"
-title: "Anything else about bank loans?"
+title: "Finnvera Start Guarantee"
 author: Kayla Gordon
 resourceType: entrepreneur
 keywords:
@@ -21,7 +21,7 @@ tags: ["Business Loan"]
 source: ["Finnvera"]
 ---
 
-Yes, don't forget about the Finnvera Start Guarantee. The Start Guarantee is intended for newly launched enterprises that are owned by private individuals and meet the SME definition applied by the EU. Another criterion is that no more than three years has passed since their entry into the Trade Register. Start Guarantee can be granted for Finnish companies or registered private entrepreneurs but not for cooperatives.
+If you take out a Nordea business loan, don't forget about the Finnvera Start Guarantee. The Start Guarantee is intended for newly launched enterprises that are owned by private individuals and meet the SME definition applied by the EU. Another criterion is that no more than three years has passed since their entry into the Trade Register. Start Guarantee can be granted for Finnish companies or registered private entrepreneurs but not for cooperatives.
 
 How do you apply? Your bank files an application on your behalf. You or your company don’t need to be in direct contact with Finnvera.
 

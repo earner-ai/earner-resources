@@ -2945,18 +2945,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___name'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___maxWidth'
-  | 'pluginCreator___pluginOptions___pathPrefix'
   | 'pluginCreator___pluginOptions___wrapperStyle'
-  | 'pluginCreator___pluginOptions___backgroundColor'
-  | 'pluginCreator___pluginOptions___linkImagesToOriginal'
-  | 'pluginCreator___pluginOptions___showCaptions'
-  | 'pluginCreator___pluginOptions___markdownCaptions'
-  | 'pluginCreator___pluginOptions___withWebp'
-  | 'pluginCreator___pluginOptions___tracedSVG'
-  | 'pluginCreator___pluginOptions___loading'
-  | 'pluginCreator___pluginOptions___disableBgImageOnAlpha'
-  | 'pluginCreator___pluginOptions___disableBgImage'
-  | 'pluginCreator___pluginOptions___ignoreFileExtensions'
   | 'pluginCreator___pluginOptions___useMozJpeg'
   | 'pluginCreator___pluginOptions___stripMetadata'
   | 'pluginCreator___pluginOptions___defaultQuality'
@@ -3177,18 +3166,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___plugins___name'
   | 'pluginOptions___plugins___version'
   | 'pluginOptions___plugins___pluginOptions___maxWidth'
-  | 'pluginOptions___plugins___pluginOptions___pathPrefix'
   | 'pluginOptions___plugins___pluginOptions___wrapperStyle'
-  | 'pluginOptions___plugins___pluginOptions___backgroundColor'
-  | 'pluginOptions___plugins___pluginOptions___linkImagesToOriginal'
-  | 'pluginOptions___plugins___pluginOptions___showCaptions'
-  | 'pluginOptions___plugins___pluginOptions___markdownCaptions'
-  | 'pluginOptions___plugins___pluginOptions___withWebp'
-  | 'pluginOptions___plugins___pluginOptions___tracedSVG'
-  | 'pluginOptions___plugins___pluginOptions___loading'
-  | 'pluginOptions___plugins___pluginOptions___disableBgImageOnAlpha'
-  | 'pluginOptions___plugins___pluginOptions___disableBgImage'
-  | 'pluginOptions___plugins___pluginOptions___ignoreFileExtensions'
   | 'pluginOptions___plugins___browserAPIs'
   | 'pluginOptions___plugins___pluginFilepath'
   | 'pluginOptions___trackingId'
@@ -3197,18 +3175,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___name'
   | 'pluginOptions___path'
   | 'pluginOptions___maxWidth'
-  | 'pluginOptions___pathPrefix'
   | 'pluginOptions___wrapperStyle'
-  | 'pluginOptions___backgroundColor'
-  | 'pluginOptions___linkImagesToOriginal'
-  | 'pluginOptions___showCaptions'
-  | 'pluginOptions___markdownCaptions'
-  | 'pluginOptions___withWebp'
-  | 'pluginOptions___tracedSVG'
-  | 'pluginOptions___loading'
-  | 'pluginOptions___disableBgImageOnAlpha'
-  | 'pluginOptions___disableBgImage'
-  | 'pluginOptions___ignoreFileExtensions'
   | 'pluginOptions___useMozJpeg'
   | 'pluginOptions___stripMetadata'
   | 'pluginOptions___defaultQuality'
@@ -3358,18 +3325,7 @@ export type SitePluginPluginOptions = {
   name?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
   maxWidth?: Maybe<Scalars['Int']>;
-  pathPrefix?: Maybe<Scalars['String']>;
   wrapperStyle?: Maybe<Scalars['String']>;
-  backgroundColor?: Maybe<Scalars['String']>;
-  linkImagesToOriginal?: Maybe<Scalars['Boolean']>;
-  showCaptions?: Maybe<Scalars['Boolean']>;
-  markdownCaptions?: Maybe<Scalars['Boolean']>;
-  withWebp?: Maybe<Scalars['Boolean']>;
-  tracedSVG?: Maybe<Scalars['Boolean']>;
-  loading?: Maybe<Scalars['String']>;
-  disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>;
-  disableBgImage?: Maybe<Scalars['Boolean']>;
-  ignoreFileExtensions?: Maybe<Array<Maybe<Scalars['String']>>>;
   useMozJpeg?: Maybe<Scalars['Boolean']>;
   stripMetadata?: Maybe<Scalars['Boolean']>;
   defaultQuality?: Maybe<Scalars['Int']>;
@@ -3408,18 +3364,7 @@ export type SitePluginPluginOptionsFilterInput = {
   name?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
   maxWidth?: Maybe<IntQueryOperatorInput>;
-  pathPrefix?: Maybe<StringQueryOperatorInput>;
   wrapperStyle?: Maybe<StringQueryOperatorInput>;
-  backgroundColor?: Maybe<StringQueryOperatorInput>;
-  linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>;
-  showCaptions?: Maybe<BooleanQueryOperatorInput>;
-  markdownCaptions?: Maybe<BooleanQueryOperatorInput>;
-  withWebp?: Maybe<BooleanQueryOperatorInput>;
-  tracedSVG?: Maybe<BooleanQueryOperatorInput>;
-  loading?: Maybe<StringQueryOperatorInput>;
-  disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>;
-  disableBgImage?: Maybe<BooleanQueryOperatorInput>;
-  ignoreFileExtensions?: Maybe<StringQueryOperatorInput>;
   useMozJpeg?: Maybe<BooleanQueryOperatorInput>;
   stripMetadata?: Maybe<BooleanQueryOperatorInput>;
   defaultQuality?: Maybe<IntQueryOperatorInput>;
@@ -3498,34 +3443,12 @@ export type SitePluginPluginOptionsPluginsFilterListInput = {
 
 export type SitePluginPluginOptionsPluginsPluginOptions = {
   maxWidth?: Maybe<Scalars['Int']>;
-  pathPrefix?: Maybe<Scalars['String']>;
   wrapperStyle?: Maybe<Scalars['String']>;
-  backgroundColor?: Maybe<Scalars['String']>;
-  linkImagesToOriginal?: Maybe<Scalars['Boolean']>;
-  showCaptions?: Maybe<Scalars['Boolean']>;
-  markdownCaptions?: Maybe<Scalars['Boolean']>;
-  withWebp?: Maybe<Scalars['Boolean']>;
-  tracedSVG?: Maybe<Scalars['Boolean']>;
-  loading?: Maybe<Scalars['String']>;
-  disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>;
-  disableBgImage?: Maybe<Scalars['Boolean']>;
-  ignoreFileExtensions?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   maxWidth?: Maybe<IntQueryOperatorInput>;
-  pathPrefix?: Maybe<StringQueryOperatorInput>;
   wrapperStyle?: Maybe<StringQueryOperatorInput>;
-  backgroundColor?: Maybe<StringQueryOperatorInput>;
-  linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>;
-  showCaptions?: Maybe<BooleanQueryOperatorInput>;
-  markdownCaptions?: Maybe<BooleanQueryOperatorInput>;
-  withWebp?: Maybe<BooleanQueryOperatorInput>;
-  tracedSVG?: Maybe<BooleanQueryOperatorInput>;
-  loading?: Maybe<StringQueryOperatorInput>;
-  disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>;
-  disableBgImage?: Maybe<BooleanQueryOperatorInput>;
-  ignoreFileExtensions?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginSortInput = {

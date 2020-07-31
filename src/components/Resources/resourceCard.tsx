@@ -20,7 +20,7 @@ const ResourceCard = (props: Props) => {
     <Card>
       <h2>{props.title}</h2>
       <Content dangerouslySetInnerHTML={{ __html: props.html }} />
-      <GreenButton to={props.slug}>Read More</GreenButton>
+      <GreenButton to={`/${props.slug}`}>Read More</GreenButton>
       <br />
       <br />
       <Category>
