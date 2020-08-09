@@ -26,12 +26,6 @@ const ResourceView = (props: Props) => {
   const html = post.html
   const finalarray: any = []
 
-  //   data.markdownRemark.frontmatter.tags.map((tag1: any) => {
-  //     data.allMarkdownRemark.edges.map((tag2: any) => {
-  //       tag1 == tag2.node.frontmatter.tags ? finalarray.push(tag1) : ""
-  //     })
-  //   })
-
   let relatedBlogPosts
 
   if (post.frontmatter.resourceType == "employed") {
@@ -88,19 +82,7 @@ const ResourceView = (props: Props) => {
 
           <SimilarContentWrap>
             <H2>You also might like</H2>
-            {/* {data.allMarkdownRemark.edges.map((content: any) => {
-              return (
-                <SimilarContent key={content.node.id}>
-                  <h2>{content.node.frontmatter.title}</h2>
-                  <br />
-                  <p>{content.node.excerpt}</p>
-                  <GreenButton to={`/${content.node.frontmatter.slug}`}>
-                    Read More
-                  </GreenButton>
-                </SimilarContent>
-              )
-            })} */}
-            {relatedBlogPosts.map(({ article: blogPost }: any) => (
+            {relatedBlogPosts?.map(({ article: blogPost }: any) => (
               <SimilarContent key={blogPost.id}>
                 <h2>{blogPost.frontmatter.title}</h2>
                 <br />
