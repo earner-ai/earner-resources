@@ -248,7 +248,7 @@ export const TagPill = styled.div`
   display: block;
   border-radius: 24.5px;
   width: max-content;
-  padding: 12px 20px 8px 20px;
+  padding: 8px 20px;
   margin-right: 30px;
   box-shadow: var(--boxShadow);
   transition: all 0.25s linear;

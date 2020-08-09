@@ -56,7 +56,9 @@ const BlogHeroImage = () => {
                 <h1>{post.node.frontmatter.title}</h1>
                 <br />
                 <br />
-                <DarkButton to={post.node.frontmatter.slug}>Read</DarkButton>
+                <DarkButton to={`/${post.node.frontmatter.slug}`}>
+                  Read
+                </DarkButton>
               </ContentWrap>
             </BlogDetails>
           </SubWrap>

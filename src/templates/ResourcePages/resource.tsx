@@ -5,6 +5,7 @@ import { graphql, PageProps, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import { TagPill, GreenButton, SeeMore } from "../../components/Primitives"
+import { RelatedContentFactory } from "../../Helpers/related-content"
 
 interface Props extends PageProps {
   data: any
@@ -21,6 +22,7 @@ const ResourceView = (props: Props) => {
   const excerpt = post.excerpt
   const slug = post.fields.slug
   const frontmatter = post.frontmatter
+  const tags = frontmatter.tags
   const html = post.html
   const finalarray: any = []
 
@@ -29,6 +31,31 @@ const ResourceView = (props: Props) => {
   //       tag1 == tag2.node.frontmatter.tags ? finalarray.push(tag1) : ""
   //     })
   //   })
+
+  let relatedBlogPosts
+
+  if (post.frontmatter.resourceType == "employed") {
+    const employed = data.employed.edges.map(({ node }: any) => node)
+
+    relatedBlogPosts = new RelatedContentFactory(employed, slug)
+      .setMaxArticles(3)
+      .setTags(tags)
+      .getArticles()
+  } else if (post.frontmatter.resourceType == "jobSeeker") {
+    const jobSeeker = data.jobSeeker.edges.map(({ node }: any) => node)
+
+    relatedBlogPosts = new RelatedContentFactory(jobSeeker, slug)
+      .setMaxArticles(3)
+      .setTags(tags)
+      .getArticles()
+  } else if (post.frontmatter.resourceType == "entrepreneur") {
+    const entrepreneur = data.entrepreneur.edges.map(({ node }: any) => node)
+
+    relatedBlogPosts = new RelatedContentFactory(entrepreneur, slug)
+      .setMaxArticles(3)
+      .setTags(tags)
+      .getArticles()
+  }
 
   return (
     <Layout>
@@ -61,18 +88,28 @@ const ResourceView = (props: Props) => {
 
           <SimilarContentWrap>
             <H2>You also might like</H2>
-            {data.allMarkdownRemark.edges.map((content: any) => {
+            {/* {data.allMarkdownRemark.edges.map((content: any) => {
               return (
                 <SimilarContent key={content.node.id}>
                   <h2>{content.node.frontmatter.title}</h2>
                   <br />
                   <p>{content.node.excerpt}</p>
-                  <GreenButton to={content.node.frontmatter.slug}>
+                  <GreenButton to={`/${content.node.frontmatter.slug}`}>
                     Read More
                   </GreenButton>
                 </SimilarContent>
               )
-            })}
+            })} */}
+            {relatedBlogPosts.map(({ article: blogPost }: any) => (
+              <SimilarContent key={blogPost.id}>
+                <h2>{blogPost.frontmatter.title}</h2>
+                <br />
+                <p>{blogPost.excerpt}</p>
+                <GreenButton to={`/${blogPost.frontmatter.slug}`}>
+                  Read More
+                </GreenButton>
+              </SimilarContent>
+            ))}
           </SimilarContentWrap>
         </Container>
       </>
@@ -106,13 +143,56 @@ export const pageQuery = graphql`
         resourceType
       }
     }
-    allMarkdownRemark(
-      limit: 3
-      filter: { fileAbsolutePath: { regex: "/content/resources/" } }
+    employed: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/content/resources/" }
+        frontmatter: { resourceType: { eq: "employed" } }
+      }
     ) {
       edges {
         node {
           frontmatter {
+            resourceType
+            tags
+            slug
+            title
+          }
+          excerpt(format: PLAIN)
+          id
+        }
+      }
+    }
+    jobSeeker: allMarkdownRemark(
+      limit: 3
+      filter: {
+        fileAbsolutePath: { regex: "/content/resources/" }
+        frontmatter: { resourceType: { eq: "jobSeeker" } }
+      }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            resourceType
+            tags
+            slug
+            title
+          }
+          excerpt(format: PLAIN)
+          id
+        }
+      }
+    }
+    entrepreneur: allMarkdownRemark(
+      limit: 3
+      filter: {
+        fileAbsolutePath: { regex: "/content/resources/" }
+        frontmatter: { resourceType: { eq: "entrepreneur" } }
+      }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            resourceType
             tags
             slug
             title

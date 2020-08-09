@@ -26,7 +26,7 @@ const BlogPage = ({ data }: any) => {
               key={post.node.frontmatter?.slug}
               author={post.node.frontmatter?.author}
               title={post.node.frontmatter?.title}
-              slug={post.node.frontmatter?.slug}
+              slug={`/${post.node.frontmatter?.slug}`}
               description={post.node?.excerpt}
               thumbnailBlog={
                 post.node.frontmatter.thumbnailBlog.childImageSharp.fluid.src

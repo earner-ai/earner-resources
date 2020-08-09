@@ -2205,8 +2205,6 @@ export type QueryAllSitePageArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<DateQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2337,8 +2335,6 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
-  port?: Maybe<Scalars['Date']>;
-  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -2349,14 +2345,6 @@ export type Site = Node & {
 
 
 export type SiteBuildTimeArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type SitePortArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
@@ -2551,8 +2539,6 @@ export type SiteFieldsEnum =
   | 'siteMetadata___author'
   | 'siteMetadata___siteUrl'
   | 'siteMetadata___social___twitter'
-  | 'port'
-  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -2645,8 +2631,6 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<DateQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -3601,9 +3585,15 @@ export type ResourceBySlugQueryVariables = Exact<{
 export type ResourceBySlugQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'author'>> }>, markdownRemark?: Maybe<(
     Pick<MarkdownRemark, 'id' | 'excerpt' | 'html'>
     & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'slug' | 'tags' | 'keywords' | 'resourceType'>> }
-  )>, allMarkdownRemark: { edges: Array<{ node: (
+  )>, employed: { edges: Array<{ node: (
         Pick<MarkdownRemark, 'excerpt' | 'id'>
-        & { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'tags' | 'slug' | 'title'>> }
+        & { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'resourceType' | 'tags' | 'slug' | 'title'>> }
+      ) }> }, jobSeeker: { edges: Array<{ node: (
+        Pick<MarkdownRemark, 'excerpt' | 'id'>
+        & { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'resourceType' | 'tags' | 'slug' | 'title'>> }
+      ) }> }, entrepreneur: { edges: Array<{ node: (
+        Pick<MarkdownRemark, 'excerpt' | 'id'>
+        & { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'resourceType' | 'tags' | 'slug' | 'title'>> }
       ) }> } };
 
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
