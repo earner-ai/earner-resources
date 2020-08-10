@@ -228,6 +228,7 @@ const SimilarContentWrap = styled.div`
   box-shadow: var(--boxShadow);
   margin: 100px auto;
   padding: 30px;
+  border-radius: 16px;
 `
 const H2 = styled.h2`
   text-align: center;
