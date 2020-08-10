@@ -12,7 +12,7 @@ import {
 } from "../components/Primitives"
 import meta from "../../content/data/meta.json"
 import styled from "styled-components"
-import NewsLetter from "../components/newsletter"
+import NewsLetter from "../components/Newsletter/newsletter"
 import ResourceCard from "../components/Resources/resourceCard"
 import GitHub from "../../static/Icons/GitHub"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
@@ -58,7 +58,7 @@ const IndexPage = ({ data }: any) => (
       <SeeMore to="/job-seekers">See All Information</SeeMore>
 
       <H1>For the people, by the people</H1>
-      <ContentContainer style={{ margin: "auto" }}>
+      <ContentContainer style={{ margin: "0px auto 50px auto" }}>
         <P>
           Earner was created by people who have struggled with the job market
           and lack of knowledge regarding resources available to them. At
@@ -74,7 +74,7 @@ const IndexPage = ({ data }: any) => (
           <GitHub />
         </GitHubLink>
       </ContentContainer>
-      <NewsLetter image={data.newsImage.childImageSharp.fluid} />
+      {/* <NewsLetter image={data.newsImage.childImageSharp.fluid} /> */}
     </Container>
   </Layout>
 )

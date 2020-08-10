@@ -3539,7 +3539,7 @@ export type BlogPostBySlugQueryVariables = Exact<{
 export type BlogPostBySlugQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'author'>> }>, markdownRemark?: Maybe<(
     Pick<MarkdownRemark, 'id' | 'excerpt' | 'html'>
     & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<(
-      Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'slug' | 'tags' | 'keywords'>
+      Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'slug' | 'tags' | 'keywords' | 'author'>
       & { thumbnailBlog?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixed_NoBase64Fragment>, fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }> }
     )> }
   )> };

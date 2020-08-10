@@ -4,7 +4,7 @@ import SEO from "../../components/SEO"
 import { graphql, PageProps, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import { TagPill, GreenButton, SeeMore } from "../../components/Primitives"
+import { TagResource, GreenButton, SeeMore } from "../../components/Primitives"
 import { RelatedContentFactory } from "../../Helpers/related-content"
 
 interface Props extends PageProps {
@@ -65,7 +65,7 @@ const ResourceView = (props: Props) => {
         <Container className="container">
           <h1>{post.frontmatter.title}</h1>
           {data.markdownRemark.frontmatter.tags.map((tag: any) => {
-            return <TagPill key={tag}>{tag}</TagPill>
+            return <TagResource key={tag}>{tag}</TagResource>
           })}
           <Content dangerouslySetInnerHTML={{ __html: html }} />
           <br />

@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
-import { deviceMin, H2, H3, P } from "../Primitives"
+import { deviceMin, TagBlog, H3, P } from "../Primitives"
 
 interface Props {
   title: string
@@ -22,10 +22,10 @@ const BlogPost = (props: Props) => {
     <Card to={props.slug}>
       <ImageContainer>
         <img alt="Blog post cover " src={props.thumbnailBlog} />
-        <Tags>
-          <Tag>{mainTag}</Tag>
-        </Tags>
       </ImageContainer>
+      <TagContainer>
+        <TagBlog>{mainTag}</TagBlog>
+      </TagContainer>
 
       <Title>{props.title}</Title>
       <small>
@@ -83,22 +83,8 @@ const ImageContainer = styled.div`
     box-shadow 0.3s var(--ease-out-quad);
 `
 
-const Tags = styled.div`
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  flex-direction: row;
-`
+const TagContainer = styled.div``
 
-const Tag = styled.span`
-  background-color: var(--darkBlue);
-  padding: 0.2rem 0.5rem;
-  font-size: 0.8rem;
-  border-radius: 5px;
-  color: white;
-  margin: 0px 0.5rem 0.5rem 0.5rem;
-  font-family: "Poppins", sans-serif;
-`
 const Title = styled(H3)`
   color: var(--darkBlue);
   margin-bottom: 15px;

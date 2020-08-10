@@ -196,8 +196,8 @@ export const Button = styled(Link)`
   background: var(--darkBlue);
   border-color: var(--darkBlue);
   color: white;
-  padding: 12px 24px;
-  border-radius: 24.5px;
+  padding: 8px 20px;
+  border-radius: 24px;
   transition: all 0.25s linear;
   text-decoration: none;
   box-shadow: var(--boxShadow);
@@ -212,8 +212,8 @@ export const SubmitBtn = styled.button`
   background: var(--darkBlue);
   border-color: var(--darkBlue);
   color: white;
-  padding: 12px 24px;
-  border-radius: 24.5px;
+  padding: 8px 20px;
+  border-radius: 24px;
   transition: all 0.25s linear;
   text-decoration: none;
   box-shadow: var(--boxShadow);
@@ -229,7 +229,7 @@ export const GreenButton = styled(Link)`
   border-color: var(--green);
   color: white;
   padding: 12px 24px;
-  border-radius: 24.5px;
+  border-radius: 24px;
   transition: all 0.25s linear;
   text-decoration: none;
   box-shadow: var(--boxShadow);
@@ -244,15 +244,29 @@ export const GreenButton = styled(Link)`
     margin-left: 27%;
   }
 `
-export const TagPill = styled.div`
+export const TagResource = styled.div`
   display: block;
-  border-radius: 24.5px;
+  border-radius: 24px;
   width: max-content;
   padding: 8px 20px;
   margin-right: 30px;
   box-shadow: var(--boxShadow);
   transition: all 0.25s linear;
   background-color: var(--grey);
+`
+
+export const TagContainer = styled.div`
+  margin: 50px 0px;
+`
+
+export const TagBlog = styled.span`
+  background-color: var(--grey);
+  padding: 0.2rem 0.5rem;
+  border-radius: 24px;
+  color: var(--darkGrey);
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
 `
 
 export const Resources = styled.div`
@@ -275,7 +289,7 @@ export const Resources = styled.div`
 `
 export const SeeMore = styled(Link)`
   display: block;
-  border-radius: 24.5px;
+  border-radius: 24px;
   width: max-content;
   padding: 12px 20px 8px 20px;
   margin: auto;
@@ -290,4 +304,17 @@ export const SeeMore = styled(Link)`
 `
 export const DarkButton = styled(Button)`
   margin: 30px auto;
+`
+export const Input = styled.input`
+  font-size: 1rem;
+  padding: 0.7rem;
+  width: 100%;
+  box-shadow: rgb(213, 210, 208) 5px 5px 15px inset,
+    rgb(255, 255, 255) -5px -5px 15px inset;
+  border-radius: 24px;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
 `

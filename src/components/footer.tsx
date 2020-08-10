@@ -9,20 +9,22 @@ import GitHubSocial from "../../static/Icons/GitHubSocial"
 import TwitterSocial from "../../static/Icons/TwitterSocial"
 import styled from "styled-components"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
+import NewsletterFooter from "./Newsletter/newsletterFooter"
 
 const Footer = () => {
   return (
     <FooterContainer>
       <Column>
-        {/* <Card></Card> */}
         <Card>
           <Logo to="/">
             <h3>earner</h3>
           </Logo>
         </Card>
-        <Card></Card>
         <Card>
-          <h4>Follow Us</h4>
+          <NewsletterFooter />
+        </Card>
+        <Card>
+          <h3>Follow Us</h3>
           <OutboundLink href="https://github.com/Earner-ai/" target="_new">
             <GitHubSocial />
           </OutboundLink>
