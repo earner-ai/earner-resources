@@ -256,7 +256,7 @@ export const TagResource = styled.div`
 `
 
 export const TagContainer = styled.div`
-  margin: 50px 0px;
+  margin: 10px 0px;
 `
 
 export const TagBlog = styled.span`

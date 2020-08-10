@@ -3,6 +3,9 @@ slug: "earner-attends-kiuas-start-accelerator-2019"
 date: "2020-05-10"
 title: "Earner was accepted into Kiuas Start 2019"
 author: Kayla Gordon
+authorSlug: "kayla-gordon"
+authorAvatar: "./authors/kayla_coffee.jpg"
+authorDescription: "Creater of Earner and Software Engineer 👋"
 keywords:
   [
     "Kiuas",

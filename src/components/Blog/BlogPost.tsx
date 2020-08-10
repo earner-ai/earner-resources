@@ -16,12 +16,12 @@ interface Props {
 }
 
 const BlogPost = (props: Props) => {
-  const mainTag = props.tags[0]
+  const mainTag = props?.tags[0]
 
   return (
-    <Card to={props.slug}>
+    <Card to={props?.slug}>
       <ImageContainer>
-        <img alt="Blog post cover " src={props.thumbnailBlog} />
+        <img alt="Blog post cover " src={props?.thumbnailBlog} />
       </ImageContainer>
       <TagContainer>
         <TagBlog>{mainTag}</TagBlog>
@@ -74,7 +74,7 @@ const ImageContainer = styled.div`
   overflow: hidden;
   position: relative;
   box-shadow: 0px 5px 15px rgba(2, 38, 64, 0.25);
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   -webkit-transition: -webkit-transform 0.3s var(--ease-out-quad),
     box-shadow 0.3s var(--ease-out-quad);
   -webkit-transition: transform 0.3s var(--ease-out-quad),

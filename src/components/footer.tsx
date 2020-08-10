@@ -85,8 +85,8 @@ const Card = styled.div`
   }
 
   @media ${deviceMin.tablet} {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 
   @media ${deviceMin.laptop} {

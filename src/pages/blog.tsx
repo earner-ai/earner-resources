@@ -29,7 +29,7 @@ const BlogPage = ({ data }: any) => {
               slug={`/${post.node.frontmatter?.slug}`}
               description={post.node?.excerpt}
               thumbnailBlog={
-                post.node.frontmatter.thumbnailBlog.childImageSharp.fluid.src
+                post.node.frontmatter.thumbnailBlog?.childImageSharp.fluid.src
               }
               tags={post.node.frontmatter.tags}
               timeToRead={post.node.timeToRead}

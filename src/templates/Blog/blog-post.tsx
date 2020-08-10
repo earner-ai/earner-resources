@@ -5,6 +5,7 @@ import { graphql, PageProps } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import { TagBlog, TagContainer } from "../../components/Primitives"
+import AuthorCard from "../../components/Blog/AuthorCard"
 
 interface Props extends PageProps {
   data: any
@@ -27,7 +28,7 @@ const BlogPost = (props: Props) => {
         <SEO
           title={frontmatter.title}
           pathName={pathname}
-          image={frontmatter.thumbnailBlog.childImageSharp.fixed.src}
+          image={frontmatter.thumbnailBlog?.childImageSharp.fixed.src}
           description={frontmatter.description || excerpt}
           staticImage={true}
           keywords={frontmatter.keywords}
@@ -40,7 +41,7 @@ const BlogPost = (props: Props) => {
             <Date>{frontmatter.date}</Date>
             <Image
               alt="Blog post cover "
-              fluid={frontmatter.thumbnailBlog.childImageSharp.fluid}
+              fluid={frontmatter.thumbnailBlog?.childImageSharp.fluid}
             />
           </Container>
         </Header>
@@ -48,15 +49,17 @@ const BlogPost = (props: Props) => {
         <Container className="container">
           <Content dangerouslySetInnerHTML={{ __html: html }} />
           <hr />
+          <h3>Tags</h3>
           <TagContainer>
-            {frontmatter.tags.map((tag: any) => {
+            {frontmatter.tags?.map((tag: any) => {
               return <TagBlog key={tag}>{tag}</TagBlog>
             })}
           </TagContainer>
-          <AuthorContainer>
-            <WrittenBy>WRITTEN BY</WrittenBy>
-            <Author>{frontmatter.author}</Author>
-          </AuthorContainer>
+          <AuthorCard
+            avatar={frontmatter?.authorAvatar?.childImageSharp}
+            author={frontmatter?.author}
+            description={frontmatter?.authorDescription}
+          />
         </Container>
       </>
     </Layout>
@@ -81,12 +84,22 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       frontmatter {
+        author
+        authorDescription
+        authorSlug
         title
         date(formatString: "MMMM DD, YYYY")
         slug
         tags
         keywords
         author
+        authorAvatar {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         thumbnailBlog {
           childImageSharp {
             fixed(width: 1200, quality: 100) {
@@ -162,20 +175,4 @@ const ShareArea = styled.div`
   flex-direction: row;
   margin: 1rem 0;
   border-top: 1px solid var(--textSecondary);
-`
-
-const AuthorContainer = styled.div`
-  width: 60%;
-  margin: 0px auto 50px auto;
-  padding: 30px;
-  box-shadow: var(--boxShadow);
-  border-radius: 16px;
-`
-const Author = styled.p`
-  font-weight: bold;
-  color: var(--green);
-`
-const WrittenBy = styled.small`
-  font-size: 14px;
-  color: var(--darkGrey);
 `
