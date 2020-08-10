@@ -45,7 +45,7 @@ const BlogHeroImage = () => {
             <Image>
               <img
                 src={
-                  post.node.frontmatter.thumbnailBlog?.childImageSharp.fluid.src
+                  post.node.frontmatter.thumbnailBlog.childImageSharp.fluid.src
                 }
                 alt=""
               />

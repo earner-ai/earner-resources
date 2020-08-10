@@ -1,9 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
 import Image, { FluidObject } from "gatsby-image"
-import { deviceMin, deviceMax } from "../Primitives"
-import { useStaticQuery, graphql } from "gatsby"
+import { deviceMax } from "../Primitives"
 
 interface Props {
   avatar: any
@@ -31,57 +29,6 @@ const AuthorCard = (props: Props) => {
 
 export default AuthorCard
 
-const Card = styled(Link)`
-  box-sizing: border-box;
-  margin: 0.5rem;
-  display: block;
-
-  @media ${deviceMin.desktopL} {
-    max-width: calc(50% - 2 * 0.5rem);
-    flex: 1 1 calc(50% - 2 * 0.5rem);
-  }
-
-  @media ${deviceMin.desktop} {
-    max-width: calc(50% - 2 * 0.5rem);
-    flex: 1 1 calc(50% - 2 * 0.5rem);
-  }
-
-  @media ${deviceMin.laptopL} {
-    max-width: calc(50% - 2 * 0.5rem);
-    flex: 1 1 calc(50% - 2 * 0.5rem);
-  }
-
-  @media ${deviceMin.laptop} {
-    max-width: calc(50% - 2 * 0.5rem);
-    flex: 1 1 calc(50% - 2 * 0.5rem);
-  }
-
-  @media ${deviceMin.tablet} {
-    max-width: calc(50% - 2 * 0.5rem);
-    flex: 1 1 calc(50% - 2 * 0.5rem);
-  }
-
-  @media ${deviceMin.tablet} {
-    max-width: 100%;
-    flex: 1 1 100%;
-  }
-
-  @media ${deviceMin.mobileL} {
-    max-width: 100%;
-    flex: 1 1 100%;
-  }
-
-  @media ${deviceMin.mobileM} {
-    max-width: 100%;
-    flex: 1 1 100%;
-  }
-
-  @media ${deviceMin.mobileS} {
-    max-width: 100%;
-    flex: 1 1 100%;
-  }
-`
-
 const Container = styled.div`
   background-color: var(--bg);
   border-radius: 4px;
@@ -96,10 +43,6 @@ const Container = styled.div`
     box-shadow: var(--shadow);
     background-color: var(--secondaryBg);
   }
-`
-const Name = styled.div`
-  font-weight: bold;
-  color: var(--textPrimary);
 `
 
 const RightSide = styled.div`
