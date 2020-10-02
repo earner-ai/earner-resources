@@ -1,12 +1,7 @@
 :root {
-  // @font-face {
-  //   font-family: "Poppins";
-  //   src: url("../fonts/Poppins/Poppins-Regular.ttf"); /* IE9 Compat Modes */
-  //   src: url("../fonts/Poppins/Poppins-Regular.ttf") format("embedded-opentype"),
-  //     /* Modern Browsers */ url("../fonts/Poppins/Poppins-Regular.ttf")
-  //       format("truetype");
-  // }
+}
 
+body {
   // Colors
   --green: RGBA(141, 211, 217, 0.8);
   --softRed: #ff585d;
@@ -41,16 +36,41 @@
     -9px -9px 18px var(--lightShadow);
 
   --shadowFull: 0px 1px 5px 5px rgb(163, 177, 198, 0.25);
+}
 
-  // Fonts
-  // --semibold: "Montserrat-semibold", sans-serif;
-  // h1,
-  // h2,
-  // h3,
-  // h4,
-  // h5,
-  // h6,
-  // body {
-  //   font-family: "Poppins", sans-serif;
-  // }
+body.dark {
+  // Darkmode Colors
+  --green: RGBA(141, 211, 217, 0.8);
+  --softRed: #ff585d;
+  --darkBlue: #022640;
+  --grey: #f0f0f3;
+  --darkGrey: #555;
+  --text: rgb(0, 0, 0);
+
+  --blueOverlay: RGBA(2, 38, 64, 0.8);
+  --redOverlay: RGBA(255, 204, 204, 0.8);
+  --greenOverlay: RGBA(141, 211, 217, 0.8);
+
+  --success: #bedcaa;
+  --warning: #ffe890;
+  --danger: #ffaead;
+
+  // Text shadows (neumorphic)
+  --shadowColor: #c0c0c0;
+  --brShadow: -6px 6px 15px rgba(0, 0, 0, 0.5);
+  --tlShadow: 6px -6px 15px rgba(255, 255, 255, 0.8);
+
+  // Shadows
+  --lightShadow: 0px 5px 15px rgba(2, 38, 64, 0.1);
+  --darkShadow: 0px 5px 15px rgba(2, 38, 64, 0.25);
+  --shadowBorder: 0.5px solid var(--lightShadow);
+
+  --boxShadow: var(--lightShadow);
+  --boxShadowHover: var(--darkShadow);
+  --transform: scale(1.01);
+
+  --shadow: 9px 9px 22px -2px var(--darkShadow),
+    -9px -9px 18px var(--lightShadow);
+
+  --shadowFull: 0px 1px 5px 5px rgb(163, 177, 198, 0.25);
 }
