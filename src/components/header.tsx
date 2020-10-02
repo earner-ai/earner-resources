@@ -2,10 +2,9 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import { deviceMin } from "../components/Primitives"
-// import { Auth } from "aws-amplify"
-import { navigate } from "@reach/router"
 import SideMenu from "../components/SideMenu/SideMenu"
 import { links } from "./Links"
+import Toggle from "./Darkmode/Toggle"
 
 const Header = () => {
   return (
@@ -25,6 +24,8 @@ const Header = () => {
           </Li>
         ))}
       </Links>
+
+      <Toggle />
       <SideMenu />
     </HeaderContainer>
   )
@@ -107,3 +108,6 @@ const Logo = styled(Link)`
 const H2 = styled.h2`
   text-transform: lowercase;
 `
+// const StyledToggle = styled(Toggle)`
+//   margin: 20px 20px 0px 20px;
+// `
