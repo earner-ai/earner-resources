@@ -3,6 +3,7 @@
 
 body {
   // Colors
+  --bg: #fff;
   --green: RGBA(141, 211, 217, 0.8);
   --softRed: #ff585d;
   --darkBlue: #022640;
@@ -40,6 +41,7 @@ body {
 
 body.dark {
   // Darkmode Colors
+  --bg: #000;
   --green: RGBA(141, 211, 217, 0.8);
   --softRed: #ff585d;
   --darkBlue: #022640;

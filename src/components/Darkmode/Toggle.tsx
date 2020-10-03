@@ -9,7 +9,7 @@ const ToggleTheme = () => {
     <ThemeToggler>
       {({ theme, toggleTheme }: any) => (
         <ToggleContainer>
-          <Small>Dark Mode</Small>
+          <Span>Dark Mode</Span>
           <Toggle
             defaultChecked={theme === "dark"}
             onChange={(e: any) =>
@@ -24,13 +24,14 @@ const ToggleTheme = () => {
 
 export default ToggleTheme
 
-const Small = styled.small`
-  font-size: 12px;
+const Span = styled.span`
   vertical-align: top;
   margin-right: 15px;
 `
 const ToggleContainer = styled.div`
-  margin: 20px 20px 0px 20px;
+  display: flex;
+  margin-right: 20px;
+  align-items: center;
 
   svg {
     color: transparent;

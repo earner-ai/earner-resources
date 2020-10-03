@@ -10,22 +10,23 @@ const Header = () => {
   return (
     <HeaderContainer>
       <LogoWrap>
-        <Link to="/" title={"Nyxo"}>
+        <Link to="/" title={"Earner"}>
           <H2>
             <Logo to="/">earner</Logo>
           </H2>
         </Link>
+        <Links>
+          {links.map((item: any, index: any) => (
+            <Li key={index}>
+              <MenuLink to={`/${item.path}`}>{item.title}</MenuLink>
+            </Li>
+          ))}
+        </Links>
       </LogoWrap>
+      <Span>
+        <Toggle />
+      </Span>
 
-      <Links>
-        {links.map((item: any, index: any) => (
-          <Li key={index}>
-            <MenuLink to={`/${item.path}`}>{item.title}</MenuLink>
-          </Li>
-        ))}
-      </Links>
-
-      <Toggle />
       <SideMenu />
     </HeaderContainer>
   )
@@ -50,7 +51,6 @@ const LogoWrap = styled.div`
 
 const HeaderContainer = styled.header`
   display: flex;
-  /* align-items: center; */
   flex-direction: row;
   justify-content: space-between;
   background-color: var(--bg);
@@ -58,10 +58,8 @@ const HeaderContainer = styled.header`
 `
 
 const Links = styled.ul`
-  display: flex;
-  flex-direction: row;
+  display: inline-block;
   padding: 0rem 1rem;
-  margin: 20px 20px 0px 20px;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -70,6 +68,9 @@ const Links = styled.ul`
 
 const Li = styled.li`
   list-style: none;
+  display: inline-block;
+  vertical-align: sub;
+  border-bottom: 5px solid transparent;
 
   &:hover {
     border-bottom: 5px solid var(--green);
@@ -107,7 +108,14 @@ const Logo = styled(Link)`
 `
 const H2 = styled.h2`
   text-transform: lowercase;
+  display: inline-block;
 `
-// const StyledToggle = styled(Toggle)`
-//   margin: 20px 20px 0px 20px;
-// `
+const Span = styled.span`
+  display: flex;
+  margin-right: 20px;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`
