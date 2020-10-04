@@ -2,8 +2,6 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import { deviceMin } from "../components/Primitives"
-// import { Auth } from "aws-amplify"
-import { navigate } from "@reach/router"
 import SideMenu from "../components/SideMenu/SideMenu"
 import { links } from "./Links"
 
@@ -49,7 +47,6 @@ const LogoWrap = styled.div`
 
 const HeaderContainer = styled.header`
   display: flex;
-  /* align-items: center; */
   flex-direction: row;
   justify-content: space-between;
   background-color: var(--bg);
