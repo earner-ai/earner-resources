@@ -96,17 +96,31 @@ export const pageQuery = graphql`
         authorAvatar {
           childImageSharp {
             fluid {
-              ...GatsbyImageSharpFluid
+              base64
+              tracedSVG
+              srcWebp
+              srcSetWebp
+              originalImg
+              originalName
             }
           }
         }
         thumbnailBlog {
           childImageSharp {
             fixed(width: 1200, quality: 100) {
-              ...GatsbyImageSharpFixed_noBase64
+              tracedSVG
+              aspectRatio
+              srcWebp
+              srcSetWebp
+              originalName
             }
             fluid {
-              ...GatsbyImageSharpFluid
+              base64
+              tracedSVG
+              srcWebp
+              srcSetWebp
+              originalImg
+              originalName
             }
           }
         }

@@ -82,7 +82,12 @@ export const JobSeekerTemplateQuery = graphql`
     file(relativePath: { eq: "laptop.png" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
+          base64
+          tracedSVG
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
         }
       }
     }

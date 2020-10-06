@@ -57,7 +57,11 @@ export const pageQuery = graphql`
     blogMeta: file(name: { regex: "/Our Blog/" }) {
       childImageSharp {
         fixed(width: 1200, quality: 100) {
-          ...GatsbyImageSharpFixed_noBase64
+          tracedSVG
+          aspectRatio
+          srcWebp
+          srcSetWebp
+          originalName
         }
       }
     }
