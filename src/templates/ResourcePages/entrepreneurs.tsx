@@ -83,7 +83,12 @@ export const EntrepreneurTemplateQuery = graphql`
     file(relativePath: { eq: "books.png" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
+          base64
+          tracedSVG
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
         }
       }
     }
