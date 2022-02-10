@@ -60,7 +60,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.0",
     "netlify-lambda": "^1.6.3",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "path": "^0.12.7",
     "prism-theme-night-owl": "^1.4.0",
     "prismjs": "^1.20.0",
